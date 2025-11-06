@@ -1,0 +1,15 @@
+syntax = "proto3";
+package basecamp;
+
+enum Team { TEAM_UNSPECIFIED=0; TEAM_GREEN=1; TEAM_PINK=2; TEAM_BOTH=3; }
+
+message Request { string request_id = 1; Team target = 2; bytes payload = 3; }
+message Result  { string request_id = 1; int64 compute_ms = 2; bytes data = 3; }
+
+message HealthRequest {}
+message HealthReply { string node = 1; }
+
+service Basecamp {
+  rpc Handle(Request) returns (Result);
+  rpc Health(HealthRequest) returns (HealthReply);
+}

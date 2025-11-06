@@ -1,0 +1,8 @@
+nodes: [
+  { name:"A" host:"host1" port:50051 is_leader:true  is_team_leader:false team:""      neighbors:["B","E"] max_inflight:64 },
+  { name:"B" host:"host2" port:50052 is_leader:false is_team_leader:true  team:"GREEN" neighbors:["A","C","D"] max_inflight:32 },
+  { name:"C" host:"host1" port:50053 is_leader:false is_team_leader:false team:"GREEN" neighbors:["B"] max_inflight:32 },
+  { name:"D" host:"host2" port:50054 is_leader:false is_team_leader:false team:"PINK"  neighbors:["B","E"] max_inflight:32 },
+  { name:"E" host:"host3" port:50055 is_leader:false is_team_leader:true  team:"PINK"  neighbors:["A","F","D"] max_inflight:32 },
+  { name:"F" host:"host3" port:50056 is_leader:false is_team_leader:false team:"PINK"  neighbors:["E"] max_inflight:32 }
+]

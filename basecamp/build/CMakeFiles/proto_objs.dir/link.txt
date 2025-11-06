@@ -1,0 +1,2 @@
+/usr/bin/ar qc libproto_objs.a CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o
+/usr/bin/ranlib libproto_objs.a

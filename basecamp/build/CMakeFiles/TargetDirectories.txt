@@ -1,0 +1,5 @@
+/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/proto_objs.dir
+/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/basecamp_server.dir
+/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/basecamp_client.dir
+/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/edit_cache.dir
+/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/rebuild_cache.dir
