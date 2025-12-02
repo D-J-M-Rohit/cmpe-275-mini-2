@@ -5,6 +5,10 @@
 #include <iostream> // <-- for error logging
 #include <thread>
 
+#include "cpp/common/rpc_utils.h"
+#include "cpp/common/topology_loader.h"
+#include "cpp/workload/kv_dataset.h"
+
 using ::grpc::Status;
 using ::grpc::StatusCode;
 
@@ -83,11 +87,17 @@ Status Handler::CallNeighbor(const std::string &name,
   std::cout << "[" << req.request_id() << "] " << ctx_.self.name() << " -> "
             << name << " (size=" << req.payload().size() << ")\n";
 
-  ::grpc::ClientContext cctx;
-  // Short deadline so we fail fast if neighbor isn't reachable
-  cctx.set_deadline(std::chrono::system_clock::now() + std::chrono::seconds(2));
+  auto do_rpc = [&]() {
+    ::grpc::ClientContext cctx;
+    // Short deadline so we fail fast if neighbor isn't reachable
+    cctx.set_deadline(std::chrono::system_clock::now() +
+                      std::chrono::seconds(2));
+    return it->second->Handle(&cctx, fwd_req, res);
+  };
 
-  auto s = it->second->Handle(&cctx, fwd_req, res);
+  // Use retries for fault tolerance
+  auto s = CallWithRetries(do_rpc, RetryConfig(), "CallNeighbor " + name);
+
   if (!s.ok()) {
     std::cerr << "RPC to neighbor " << name
               << " failed: code=" << static_cast<int>(s.error_code())
@@ -194,8 +204,21 @@ Status Handler::CallNeighbor(const std::string &name,
     return Status::OK;
   }
 
-  // Workers C/D/F: local only
+  // Workers C/D/F: local only with idempotency check
+  // v2: Check idempotency cache for duplicate requests
+  auto cached_response = idempotency_cache_.Get(req->request_id());
+  if (cached_response.has_value()) {
+    std::cerr << ctx_.self.name() << ": Idempotency HIT for "
+              << req->request_id() << "\n";
+    out->ParseFromString(*cached_response);
+    return Status::OK;
+  }
+
   *out = DoLocalWork(*req);
+
+  // Cache response for idempotency
+  idempotency_cache_.Put(req->request_id(), out->SerializeAsString());
+
   return Status::OK;
 }
 
@@ -487,10 +510,15 @@ void Handler::PropagateCancel(const std::string &req_id,
     return Status(StatusCode::UNAVAILABLE, "neighbor " + name + " has no stub");
   }
 
-  ::grpc::ClientContext cctx;
-  cctx.set_deadline(std::chrono::system_clock::now() + std::chrono::seconds(5));
+  auto do_rpc = [&]() {
+    ::grpc::ClientContext cctx;
+    cctx.set_deadline(std::chrono::system_clock::now() +
+                      std::chrono::seconds(5));
+    return it->second->InitQuery(&cctx, req, chunk);
+  };
 
-  auto s = it->second->InitQuery(&cctx, req, chunk);
+  auto s = CallWithRetries(do_rpc, RetryConfig(), "InitQuery " + name);
+
   if (!s.ok()) {
     std::cerr << "InitQuery to neighbor " << name
               << " failed: code=" << static_cast<int>(s.error_code())

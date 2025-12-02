@@ -49,6 +49,9 @@ private:
   std::unique_ptr<KVDataset> dataset_;
   LRUCache<std::string> cache_{1000, 300}; // 1000 entries, 5min TTL
 
+  // v2: Idempotency cache for deduplication on leaf nodes (C, D, F)
+  LRUCache<std::string> idempotency_cache_{500, 60}; // 500 entries, 1min TTL
+
   // Legacy helpers
   basecamp::Result DoLocalWork(const basecamp::Request &req) const;
   ::grpc::Status CallNeighbor(const std::string &name,

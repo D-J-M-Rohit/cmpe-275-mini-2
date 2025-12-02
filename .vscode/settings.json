@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp"
 }
