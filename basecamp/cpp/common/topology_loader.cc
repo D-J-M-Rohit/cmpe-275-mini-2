@@ -1,4 +1,5 @@
 #include "cpp/common/topology_loader.h"
+#include "cpp/common/neighbor_client.h"
 
 #include <fstream>
 #include <sstream>
@@ -59,6 +60,11 @@ NodeCtx LoadNodeContext(const std::string &topology_file,
     auto addr = Addr(it->second);
     std::cout << "    - " << nbr << " (" << addr << ")\n";
 
+    // v3: Create NeighborClient for connection pooling
+    ctx.neighbor_clients[nbr] = std::make_unique<NeighborClient>(nbr, addr);
+
+    // Legacy: Also create stub for backward compatibility (will be removed
+    // later)
     auto channel =
         grpc::CreateChannel(addr, grpc::InsecureChannelCredentials());
 

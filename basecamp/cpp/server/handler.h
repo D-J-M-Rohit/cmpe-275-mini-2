@@ -11,6 +11,7 @@
 #include "cpp/common/cache.h"
 #include "cpp/common/cancellation.h"
 #include "cpp/common/chunk_manager.h"
+#include "cpp/common/neighbor_client.h"
 #include "cpp/common/topology_loader.h"
 #include "cpp/workload/kv_dataset.h"
 

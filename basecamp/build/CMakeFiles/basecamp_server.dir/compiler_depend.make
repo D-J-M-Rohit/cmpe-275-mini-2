@@ -3523,6 +3523,7 @@ CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o: /Users/jay/Deskt
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/basecamp.grpc.pb.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/basecamp.pb.h \
+  /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/neighbor_client.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/topology_loader.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/topology.pb.h \
   /opt/homebrew/include/absl/algorithm/algorithm.h \
@@ -4742,6 +4743,7 @@ CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o: /Users/jay/Desktop/sjsu/
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/cache.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/cancellation.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/chunk_manager.h \
+  /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/neighbor_client.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/rpc_utils.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/topology_loader.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/server/handler.h \
@@ -5962,6 +5964,7 @@ CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o: /Users/jay/Desktop/s
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/cache.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/cancellation.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/chunk_manager.h \
+  /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/neighbor_client.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/topology_loader.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/server/handler.h \
   /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/topology.pb.h \
@@ -7495,6 +7498,8 @@ CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o: /Users/jay/Desktop/
 /opt/homebrew/include/absl/container/flat_hash_set.h:
 
 /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/topology_loader.h:
+
+/Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/common/neighbor_client.h:
 
 /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/basecamp.grpc.pb.h:
 

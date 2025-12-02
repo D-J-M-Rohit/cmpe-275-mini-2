@@ -2,22 +2,26 @@
 #include <map>
 #include <memory>
 #include <string>
-#include <vector>
 
 #include <grpcpp/grpcpp.h>
 
 #include "cpp/basecamp.grpc.pb.h"
+#include "cpp/common/neighbor_client.h"
 #include "cpp/topology.pb.h"
 
 struct NodeCtx {
   topo::Node self;
-  std::map<std::string, topo::Node> neighbors; // name -> node
-  std::map<std::string, std::unique_ptr<basecamp::Basecamp::Stub>>
-      stubs; // name -> stub
+  std::map<std::string, topo::Node> neighbors;
+  // v3: Map from neighbor name to NeighborClient for connection pooling
+  std::map<std::string, std::unique_ptr<NeighborClient>> neighbor_clients;
+
+  // Legacy: Map from neighbor name to gRPC stub (deprecated in favor of
+  // neighbor_clients)
+  std::map<std::string, std::unique_ptr<basecamp::Basecamp::Stub>> stubs;
 };
 
-/// Loads the topology textproto from TOPOLOGY_FILE and builds stubs to
-/// neighbors
+std::string Addr(const topo::Node &n);
+
 NodeCtx LoadNodeContext(const std::string &topology_file,
                         const std::string &node_name);
 
