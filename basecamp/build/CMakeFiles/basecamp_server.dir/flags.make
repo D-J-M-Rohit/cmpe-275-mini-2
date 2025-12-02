@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DPROTOBUF_USE_DLLS
 
-CXX_INCLUDES = -I"/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp" -I"/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp" -isystem /opt/homebrew/opt/grpc/include -isystem /opt/homebrew/include -isystem /opt/homebrew/opt/protobuf/include
+CXX_INCLUDES = -I"/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp" -I"/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp" -isystem /opt/homebrew/include
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
 

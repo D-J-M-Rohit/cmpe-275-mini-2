@@ -201,8 +201,8 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //The directory containing a CMake configuration file for OpenSSL.
 OpenSSL_DIR:PATH=/opt/homebrew/lib/cmake/OpenSSL
 
-//No help, variable specified on the command line.
-Protobuf_DIR:UNINITIALIZED=/opt/homebrew/opt/protobuf/lib/cmake/protobuf
+//The directory containing a CMake configuration file for Protobuf.
+Protobuf_DIR:PATH=/opt/homebrew/lib/cmake/protobuf
 
 //The directory containing a CMake configuration file for Threads.
 Threads_DIR:PATH=Threads_DIR-NOTFOUND
@@ -234,8 +234,8 @@ basecamp_SOURCE_DIR:STATIC=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp
 //The directory containing a CMake configuration file for c-ares.
 c-ares_DIR:PATH=/opt/homebrew/lib/cmake/c-ares
 
-//No help, variable specified on the command line.
-gRPC_DIR:UNINITIALIZED=/opt/homebrew/opt/grpc/lib/cmake/grpc
+//The directory containing a CMake configuration file for gRPC.
+gRPC_DIR:PATH=/opt/homebrew/lib/cmake/grpc
 
 //CMake built-in FindProtobuf.cmake module compatible
 protobuf_MODULE_COMPATIBLE:BOOL=OFF

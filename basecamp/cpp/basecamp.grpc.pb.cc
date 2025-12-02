@@ -24,6 +24,9 @@ namespace basecamp {
 
 static const char* Basecamp_method_names[] = {
   "/basecamp.Basecamp/Handle",
+  "/basecamp.Basecamp/InitQuery",
+  "/basecamp.Basecamp/GetChunk",
+  "/basecamp.Basecamp/Cancel",
   "/basecamp.Basecamp/Health",
 };
 
@@ -35,7 +38,10 @@ std::unique_ptr< Basecamp::Stub> Basecamp::NewStub(const std::shared_ptr< ::grpc
 
 Basecamp::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_Handle_(Basecamp_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Health_(Basecamp_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_InitQuery_(Basecamp_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetChunk_(Basecamp_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Cancel_(Basecamp_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Health_(Basecamp_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Basecamp::Stub::Handle(::grpc::ClientContext* context, const ::basecamp::Request& request, ::basecamp::Result* response) {
@@ -57,6 +63,75 @@ void Basecamp::Stub::async::Handle(::grpc::ClientContext* context, const ::basec
 ::grpc::ClientAsyncResponseReader< ::basecamp::Result>* Basecamp::Stub::AsyncHandleRaw(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncHandleRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Basecamp::Stub::InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::basecamp::Chunk* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::basecamp::InitRequest, ::basecamp::Chunk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_InitQuery_, context, request, response);
+}
+
+void Basecamp::Stub::async::InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::basecamp::InitRequest, ::basecamp::Chunk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_InitQuery_, context, request, response, std::move(f));
+}
+
+void Basecamp::Stub::async::InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_InitQuery_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* Basecamp::Stub::PrepareAsyncInitQueryRaw(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::basecamp::Chunk, ::basecamp::InitRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_InitQuery_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* Basecamp::Stub::AsyncInitQueryRaw(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncInitQueryRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Basecamp::Stub::GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::basecamp::Chunk* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::basecamp::ChunkRequest, ::basecamp::Chunk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetChunk_, context, request, response);
+}
+
+void Basecamp::Stub::async::GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::basecamp::ChunkRequest, ::basecamp::Chunk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetChunk_, context, request, response, std::move(f));
+}
+
+void Basecamp::Stub::async::GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetChunk_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* Basecamp::Stub::PrepareAsyncGetChunkRaw(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::basecamp::Chunk, ::basecamp::ChunkRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetChunk_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* Basecamp::Stub::AsyncGetChunkRaw(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetChunkRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Basecamp::Stub::Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::basecamp::CancelReply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::basecamp::CancelRequest, ::basecamp::CancelReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Cancel_, context, request, response);
+}
+
+void Basecamp::Stub::async::Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::basecamp::CancelRequest, ::basecamp::CancelReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Cancel_, context, request, response, std::move(f));
+}
+
+void Basecamp::Stub::async::Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Cancel_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>* Basecamp::Stub::PrepareAsyncCancelRaw(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::basecamp::CancelReply, ::basecamp::CancelRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Cancel_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>* Basecamp::Stub::AsyncCancelRaw(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCancelRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -98,6 +173,36 @@ Basecamp::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Basecamp_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Basecamp::Service, ::basecamp::InitRequest, ::basecamp::Chunk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Basecamp::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::basecamp::InitRequest* req,
+             ::basecamp::Chunk* resp) {
+               return service->InitQuery(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Basecamp_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Basecamp::Service, ::basecamp::ChunkRequest, ::basecamp::Chunk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Basecamp::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::basecamp::ChunkRequest* req,
+             ::basecamp::Chunk* resp) {
+               return service->GetChunk(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Basecamp_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Basecamp::Service, ::basecamp::CancelRequest, ::basecamp::CancelReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Basecamp::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::basecamp::CancelRequest* req,
+             ::basecamp::CancelReply* resp) {
+               return service->Cancel(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Basecamp_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Basecamp::Service, ::basecamp::HealthRequest, ::basecamp::HealthReply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Basecamp::Service* service,
              ::grpc::ServerContext* ctx,
@@ -111,6 +216,27 @@ Basecamp::Service::~Service() {
 }
 
 ::grpc::Status Basecamp::Service::Handle(::grpc::ServerContext* context, const ::basecamp::Request* request, ::basecamp::Result* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Basecamp::Service::InitQuery(::grpc::ServerContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Basecamp::Service::GetChunk(::grpc::ServerContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Basecamp::Service::Cancel(::grpc::ServerContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response) {
   (void) context;
   (void) request;
   (void) response;

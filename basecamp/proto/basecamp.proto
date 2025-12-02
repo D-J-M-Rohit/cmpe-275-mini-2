@@ -3,13 +3,79 @@ package basecamp;
 
 enum Team { TEAM_UNSPECIFIED=0; TEAM_GREEN=1; TEAM_PINK=2; TEAM_BOTH=3; }
 
-message Request { string request_id = 1; Team target = 2; bytes payload = 3; }
+// === LEGACY MESSAGES (backward compatibility) ===
+message Request {
+  string request_id = 1;      // Unique ID for the logical request
+  string payload = 2;         // Data payload
+  Team target = 3;            // Target team (GREEN, PINK, or BOTH)
+  repeated string path = 4;   // Trace of nodes visited (e.g. ["A", "B"])
+  
+  // v2 fields (reserved for later)
+  // int64 timeout_ms = 5;
+}
 message Result  { string request_id = 1; int64 compute_ms = 2; bytes data = 3; }
 
+// === CHUNKED RESPONSE MESSAGES ===
+message InitRequest {
+  string request_id = 1;
+  Team target = 2;
+  int32 key_min = 3;           // range query [key_min, key_max]
+  int32 key_max = 4;
+  string cancellation_token = 5;  // UUID for cancellation
+}
+
+message ChunkRequest {
+  string request_id = 1;
+  int32 chunk_index = 2;       // 0-based chunk index
+  string cancellation_token = 3;
+}
+
+message Chunk {
+  string request_id = 1;
+  int32 chunk_index = 2;
+  bool is_final = 3;           // true if this is the last chunk
+  int32 total_chunks = 4;      // only set when is_final=true
+  bytes data = 5;              // serialized KVResult
+  int64 compute_ms = 6;        // cumulative compute time
+}
+
+// === WORKLOAD: KEY-VALUE RANGE QUERY ===
+message KVPair {
+  int32 key = 1;
+  int64 value = 2;
+}
+
+message KVResult {
+  repeated KVPair pairs = 1;   // chunk of key-value pairs
+  int64 partial_sum = 2;       // sum of values in this chunk
+}
+
+// === CANCELLATION ===
+message CancelRequest {
+  string request_id = 1;
+  string cancellation_token = 2;
+  repeated string path = 3; // Trace to prevent cycles
+}
+
+message CancelReply {
+  bool cancelled = 1;
+  string message = 2;
+}
+
+// === HEALTH CHECK ===
 message HealthRequest {}
 message HealthReply { string node = 1; }
 
+// === SERVICE DEFINITION ===
 service Basecamp {
+  // Legacy API (backward compatibility)
   rpc Handle(Request) returns (Result);
+  
+  // New chunked API
+  rpc InitQuery(InitRequest) returns (Chunk);   // starts query, returns first chunk
+  rpc GetChunk(ChunkRequest) returns (Chunk);   // retrieves subsequent chunks
+  rpc Cancel(CancelRequest) returns (CancelReply);  // cancels ongoing request
+  
+  // Health check
   rpc Health(HealthRequest) returns (HealthReply);
 }

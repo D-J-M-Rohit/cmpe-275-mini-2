@@ -26,7 +26,8 @@ if _version_not_supported:
 
 
 class BasecampStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """=== SERVICE DEFINITION ===
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -39,6 +40,21 @@ class BasecampStub(object):
                 request_serializer=basecamp__pb2.Request.SerializeToString,
                 response_deserializer=basecamp__pb2.Result.FromString,
                 _registered_method=True)
+        self.InitQuery = channel.unary_unary(
+                '/basecamp.Basecamp/InitQuery',
+                request_serializer=basecamp__pb2.InitRequest.SerializeToString,
+                response_deserializer=basecamp__pb2.Chunk.FromString,
+                _registered_method=True)
+        self.GetChunk = channel.unary_unary(
+                '/basecamp.Basecamp/GetChunk',
+                request_serializer=basecamp__pb2.ChunkRequest.SerializeToString,
+                response_deserializer=basecamp__pb2.Chunk.FromString,
+                _registered_method=True)
+        self.Cancel = channel.unary_unary(
+                '/basecamp.Basecamp/Cancel',
+                request_serializer=basecamp__pb2.CancelRequest.SerializeToString,
+                response_deserializer=basecamp__pb2.CancelReply.FromString,
+                _registered_method=True)
         self.Health = channel.unary_unary(
                 '/basecamp.Basecamp/Health',
                 request_serializer=basecamp__pb2.HealthRequest.SerializeToString,
@@ -47,16 +63,41 @@ class BasecampStub(object):
 
 
 class BasecampServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """=== SERVICE DEFINITION ===
+    """
 
     def Handle(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Legacy API (backward compatibility)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InitQuery(self, request, context):
+        """New chunked API
+        starts query, returns first chunk
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetChunk(self, request, context):
+        """retrieves subsequent chunks
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Cancel(self, request, context):
+        """cancels ongoing request
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Health(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Health check
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -68,6 +109,21 @@ def add_BasecampServicer_to_server(servicer, server):
                     servicer.Handle,
                     request_deserializer=basecamp__pb2.Request.FromString,
                     response_serializer=basecamp__pb2.Result.SerializeToString,
+            ),
+            'InitQuery': grpc.unary_unary_rpc_method_handler(
+                    servicer.InitQuery,
+                    request_deserializer=basecamp__pb2.InitRequest.FromString,
+                    response_serializer=basecamp__pb2.Chunk.SerializeToString,
+            ),
+            'GetChunk': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetChunk,
+                    request_deserializer=basecamp__pb2.ChunkRequest.FromString,
+                    response_serializer=basecamp__pb2.Chunk.SerializeToString,
+            ),
+            'Cancel': grpc.unary_unary_rpc_method_handler(
+                    servicer.Cancel,
+                    request_deserializer=basecamp__pb2.CancelRequest.FromString,
+                    response_serializer=basecamp__pb2.CancelReply.SerializeToString,
             ),
             'Health': grpc.unary_unary_rpc_method_handler(
                     servicer.Health,
@@ -83,7 +139,8 @@ def add_BasecampServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Basecamp(object):
-    """Missing associated documentation comment in .proto file."""
+    """=== SERVICE DEFINITION ===
+    """
 
     @staticmethod
     def Handle(request,
@@ -102,6 +159,87 @@ class Basecamp(object):
             '/basecamp.Basecamp/Handle',
             basecamp__pb2.Request.SerializeToString,
             basecamp__pb2.Result.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InitQuery(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/basecamp.Basecamp/InitQuery',
+            basecamp__pb2.InitRequest.SerializeToString,
+            basecamp__pb2.Chunk.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetChunk(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/basecamp.Basecamp/GetChunk',
+            basecamp__pb2.ChunkRequest.SerializeToString,
+            basecamp__pb2.Chunk.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Cancel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/basecamp.Basecamp/Cancel',
+            basecamp__pb2.CancelRequest.SerializeToString,
+            basecamp__pb2.CancelReply.FromString,
             options,
             channel_credentials,
             insecure,

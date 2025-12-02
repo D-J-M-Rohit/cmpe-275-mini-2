@@ -227,6 +227,78 @@ cpp/client/main_client.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_client.dir/build.make CMakeFiles/basecamp_client.dir/cpp/client/main_client.cc.s
 .PHONY : cpp/client/main_client.cc.s
 
+cpp/common/admission_control.o: cpp/common/admission_control.cc.o
+.PHONY : cpp/common/admission_control.o
+
+# target to build an object file
+cpp/common/admission_control.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o
+.PHONY : cpp/common/admission_control.cc.o
+
+cpp/common/admission_control.i: cpp/common/admission_control.cc.i
+.PHONY : cpp/common/admission_control.i
+
+# target to preprocess a source file
+cpp/common/admission_control.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.i
+.PHONY : cpp/common/admission_control.cc.i
+
+cpp/common/admission_control.s: cpp/common/admission_control.cc.s
+.PHONY : cpp/common/admission_control.s
+
+# target to generate assembly for a file
+cpp/common/admission_control.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.s
+.PHONY : cpp/common/admission_control.cc.s
+
+cpp/common/cancellation.o: cpp/common/cancellation.cc.o
+.PHONY : cpp/common/cancellation.o
+
+# target to build an object file
+cpp/common/cancellation.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o
+.PHONY : cpp/common/cancellation.cc.o
+
+cpp/common/cancellation.i: cpp/common/cancellation.cc.i
+.PHONY : cpp/common/cancellation.i
+
+# target to preprocess a source file
+cpp/common/cancellation.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.i
+.PHONY : cpp/common/cancellation.cc.i
+
+cpp/common/cancellation.s: cpp/common/cancellation.cc.s
+.PHONY : cpp/common/cancellation.s
+
+# target to generate assembly for a file
+cpp/common/cancellation.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.s
+.PHONY : cpp/common/cancellation.cc.s
+
+cpp/common/chunk_manager.o: cpp/common/chunk_manager.cc.o
+.PHONY : cpp/common/chunk_manager.o
+
+# target to build an object file
+cpp/common/chunk_manager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o
+.PHONY : cpp/common/chunk_manager.cc.o
+
+cpp/common/chunk_manager.i: cpp/common/chunk_manager.cc.i
+.PHONY : cpp/common/chunk_manager.i
+
+# target to preprocess a source file
+cpp/common/chunk_manager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.i
+.PHONY : cpp/common/chunk_manager.cc.i
+
+cpp/common/chunk_manager.s: cpp/common/chunk_manager.cc.s
+.PHONY : cpp/common/chunk_manager.s
+
+# target to generate assembly for a file
+cpp/common/chunk_manager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.s
+.PHONY : cpp/common/chunk_manager.cc.s
+
 cpp/common/topology_loader.o: cpp/common/topology_loader.cc.o
 .PHONY : cpp/common/topology_loader.o
 
@@ -326,6 +398,30 @@ cpp/topology.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_objs.dir/build.make CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.s
 .PHONY : cpp/topology.pb.cc.s
 
+cpp/workload/kv_dataset.o: cpp/workload/kv_dataset.cc.o
+.PHONY : cpp/workload/kv_dataset.o
+
+# target to build an object file
+cpp/workload/kv_dataset.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o
+.PHONY : cpp/workload/kv_dataset.cc.o
+
+cpp/workload/kv_dataset.i: cpp/workload/kv_dataset.cc.i
+.PHONY : cpp/workload/kv_dataset.i
+
+# target to preprocess a source file
+cpp/workload/kv_dataset.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.i
+.PHONY : cpp/workload/kv_dataset.cc.i
+
+cpp/workload/kv_dataset.s: cpp/workload/kv_dataset.cc.s
+.PHONY : cpp/workload/kv_dataset.s
+
+# target to generate assembly for a file
+cpp/workload/kv_dataset.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basecamp_server.dir/build.make CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.s
+.PHONY : cpp/workload/kv_dataset.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -346,6 +442,15 @@ help:
 	@echo "... cpp/client/main_client.o"
 	@echo "... cpp/client/main_client.i"
 	@echo "... cpp/client/main_client.s"
+	@echo "... cpp/common/admission_control.o"
+	@echo "... cpp/common/admission_control.i"
+	@echo "... cpp/common/admission_control.s"
+	@echo "... cpp/common/cancellation.o"
+	@echo "... cpp/common/cancellation.i"
+	@echo "... cpp/common/cancellation.s"
+	@echo "... cpp/common/chunk_manager.o"
+	@echo "... cpp/common/chunk_manager.i"
+	@echo "... cpp/common/chunk_manager.s"
 	@echo "... cpp/common/topology_loader.o"
 	@echo "... cpp/common/topology_loader.i"
 	@echo "... cpp/common/topology_loader.s"
@@ -358,6 +463,9 @@ help:
 	@echo "... cpp/topology.pb.o"
 	@echo "... cpp/topology.pb.i"
 	@echo "... cpp/topology.pb.s"
+	@echo "... cpp/workload/kv_dataset.o"
+	@echo "... cpp/workload/kv_dataset.i"
+	@echo "... cpp/workload/kv_dataset.s"
 .PHONY : help
 
 

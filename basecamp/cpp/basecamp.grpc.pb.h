@@ -28,6 +28,7 @@
 
 namespace basecamp {
 
+// === SERVICE DEFINITION ===
 class Basecamp final {
  public:
   static constexpr char const* service_full_name() {
@@ -36,6 +37,7 @@ class Basecamp final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Legacy API (backward compatibility)
     virtual ::grpc::Status Handle(::grpc::ClientContext* context, const ::basecamp::Request& request, ::basecamp::Result* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Result>> AsyncHandle(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Result>>(AsyncHandleRaw(context, request, cq));
@@ -43,6 +45,32 @@ class Basecamp final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Result>> PrepareAsyncHandle(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Result>>(PrepareAsyncHandleRaw(context, request, cq));
     }
+    // New chunked API
+    virtual ::grpc::Status InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::basecamp::Chunk* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>> AsyncInitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>>(AsyncInitQueryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>> PrepareAsyncInitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>>(PrepareAsyncInitQueryRaw(context, request, cq));
+    }
+    // starts query, returns first chunk
+    virtual ::grpc::Status GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::basecamp::Chunk* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>> AsyncGetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>>(AsyncGetChunkRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>> PrepareAsyncGetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>>(PrepareAsyncGetChunkRaw(context, request, cq));
+    }
+    // retrieves subsequent chunks
+    virtual ::grpc::Status Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::basecamp::CancelReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::CancelReply>> AsyncCancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::CancelReply>>(AsyncCancelRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::CancelReply>> PrepareAsyncCancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::CancelReply>>(PrepareAsyncCancelRaw(context, request, cq));
+    }
+    // cancels ongoing request
+    // Health check
     virtual ::grpc::Status Health(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::basecamp::HealthReply* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::HealthReply>> AsyncHealth(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::HealthReply>>(AsyncHealthRaw(context, request, cq));
@@ -53,8 +81,20 @@ class Basecamp final {
     class async_interface {
      public:
       virtual ~async_interface() {}
+      // Legacy API (backward compatibility)
       virtual void Handle(::grpc::ClientContext* context, const ::basecamp::Request* request, ::basecamp::Result* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Handle(::grpc::ClientContext* context, const ::basecamp::Request* request, ::basecamp::Result* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // New chunked API
+      virtual void InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // starts query, returns first chunk
+      virtual void GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // retrieves subsequent chunks
+      virtual void Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // cancels ongoing request
+      // Health check
       virtual void Health(::grpc::ClientContext* context, const ::basecamp::HealthRequest* request, ::basecamp::HealthReply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Health(::grpc::ClientContext* context, const ::basecamp::HealthRequest* request, ::basecamp::HealthReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -64,6 +104,12 @@ class Basecamp final {
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Result>* AsyncHandleRaw(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Result>* PrepareAsyncHandleRaw(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>* AsyncInitQueryRaw(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>* PrepareAsyncInitQueryRaw(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>* AsyncGetChunkRaw(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::Chunk>* PrepareAsyncGetChunkRaw(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::CancelReply>* AsyncCancelRaw(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::CancelReply>* PrepareAsyncCancelRaw(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::HealthReply>* AsyncHealthRaw(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::basecamp::HealthReply>* PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -77,6 +123,27 @@ class Basecamp final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Result>> PrepareAsyncHandle(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Result>>(PrepareAsyncHandleRaw(context, request, cq));
     }
+    ::grpc::Status InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::basecamp::Chunk* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>> AsyncInitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>>(AsyncInitQueryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>> PrepareAsyncInitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>>(PrepareAsyncInitQueryRaw(context, request, cq));
+    }
+    ::grpc::Status GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::basecamp::Chunk* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>> AsyncGetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>>(AsyncGetChunkRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>> PrepareAsyncGetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>>(PrepareAsyncGetChunkRaw(context, request, cq));
+    }
+    ::grpc::Status Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::basecamp::CancelReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>> AsyncCancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>>(AsyncCancelRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>> PrepareAsyncCancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>>(PrepareAsyncCancelRaw(context, request, cq));
+    }
     ::grpc::Status Health(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::basecamp::HealthReply* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::HealthReply>> AsyncHealth(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::basecamp::HealthReply>>(AsyncHealthRaw(context, request, cq));
@@ -89,6 +156,12 @@ class Basecamp final {
      public:
       void Handle(::grpc::ClientContext* context, const ::basecamp::Request* request, ::basecamp::Result* response, std::function<void(::grpc::Status)>) override;
       void Handle(::grpc::ClientContext* context, const ::basecamp::Request* request, ::basecamp::Result* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response, std::function<void(::grpc::Status)>) override;
+      void InitQuery(::grpc::ClientContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response, std::function<void(::grpc::Status)>) override;
+      void GetChunk(::grpc::ClientContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response, std::function<void(::grpc::Status)>) override;
+      void Cancel(::grpc::ClientContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response, ::grpc::ClientUnaryReactor* reactor) override;
       void Health(::grpc::ClientContext* context, const ::basecamp::HealthRequest* request, ::basecamp::HealthReply* response, std::function<void(::grpc::Status)>) override;
       void Health(::grpc::ClientContext* context, const ::basecamp::HealthRequest* request, ::basecamp::HealthReply* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
@@ -104,9 +177,18 @@ class Basecamp final {
     class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::basecamp::Result>* AsyncHandleRaw(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::basecamp::Result>* PrepareAsyncHandleRaw(::grpc::ClientContext* context, const ::basecamp::Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* AsyncInitQueryRaw(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* PrepareAsyncInitQueryRaw(::grpc::ClientContext* context, const ::basecamp::InitRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* AsyncGetChunkRaw(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::basecamp::Chunk>* PrepareAsyncGetChunkRaw(::grpc::ClientContext* context, const ::basecamp::ChunkRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>* AsyncCancelRaw(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::basecamp::CancelReply>* PrepareAsyncCancelRaw(::grpc::ClientContext* context, const ::basecamp::CancelRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::basecamp::HealthReply>* AsyncHealthRaw(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::basecamp::HealthReply>* PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::basecamp::HealthRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_Handle_;
+    const ::grpc::internal::RpcMethod rpcmethod_InitQuery_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetChunk_;
+    const ::grpc::internal::RpcMethod rpcmethod_Cancel_;
     const ::grpc::internal::RpcMethod rpcmethod_Health_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -115,7 +197,16 @@ class Basecamp final {
    public:
     Service();
     virtual ~Service();
+    // Legacy API (backward compatibility)
     virtual ::grpc::Status Handle(::grpc::ServerContext* context, const ::basecamp::Request* request, ::basecamp::Result* response);
+    // New chunked API
+    virtual ::grpc::Status InitQuery(::grpc::ServerContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response);
+    // starts query, returns first chunk
+    virtual ::grpc::Status GetChunk(::grpc::ServerContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response);
+    // retrieves subsequent chunks
+    virtual ::grpc::Status Cancel(::grpc::ServerContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response);
+    // cancels ongoing request
+    // Health check
     virtual ::grpc::Status Health(::grpc::ServerContext* context, const ::basecamp::HealthRequest* request, ::basecamp::HealthReply* response);
   };
   template <class BaseClass>
@@ -139,12 +230,72 @@ class Basecamp final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_InitQuery : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_InitQuery() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_InitQuery() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status InitQuery(::grpc::ServerContext* /*context*/, const ::basecamp::InitRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestInitQuery(::grpc::ServerContext* context, ::basecamp::InitRequest* request, ::grpc::ServerAsyncResponseWriter< ::basecamp::Chunk>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetChunk : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetChunk() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_GetChunk() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetChunk(::grpc::ServerContext* /*context*/, const ::basecamp::ChunkRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetChunk(::grpc::ServerContext* context, ::basecamp::ChunkRequest* request, ::grpc::ServerAsyncResponseWriter< ::basecamp::Chunk>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Cancel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Cancel() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_Cancel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Cancel(::grpc::ServerContext* /*context*/, const ::basecamp::CancelRequest* /*request*/, ::basecamp::CancelReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCancel(::grpc::ServerContext* context, ::basecamp::CancelRequest* request, ::grpc::ServerAsyncResponseWriter< ::basecamp::CancelReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Health() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
@@ -155,10 +306,10 @@ class Basecamp final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestHealth(::grpc::ServerContext* context, ::basecamp::HealthRequest* request, ::grpc::ServerAsyncResponseWriter< ::basecamp::HealthReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_Handle<WithAsyncMethod_Health<Service > > AsyncService;
+  typedef WithAsyncMethod_Handle<WithAsyncMethod_InitQuery<WithAsyncMethod_GetChunk<WithAsyncMethod_Cancel<WithAsyncMethod_Health<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_Handle : public BaseClass {
    private:
@@ -187,18 +338,99 @@ class Basecamp final {
       ::grpc::CallbackServerContext* /*context*/, const ::basecamp::Request* /*request*/, ::basecamp::Result* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_InitQuery : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_InitQuery() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::basecamp::InitRequest, ::basecamp::Chunk>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::basecamp::InitRequest* request, ::basecamp::Chunk* response) { return this->InitQuery(context, request, response); }));}
+    void SetMessageAllocatorFor_InitQuery(
+        ::grpc::MessageAllocator< ::basecamp::InitRequest, ::basecamp::Chunk>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::basecamp::InitRequest, ::basecamp::Chunk>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_InitQuery() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status InitQuery(::grpc::ServerContext* /*context*/, const ::basecamp::InitRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* InitQuery(
+      ::grpc::CallbackServerContext* /*context*/, const ::basecamp::InitRequest* /*request*/, ::basecamp::Chunk* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetChunk : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetChunk() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::basecamp::ChunkRequest, ::basecamp::Chunk>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::basecamp::ChunkRequest* request, ::basecamp::Chunk* response) { return this->GetChunk(context, request, response); }));}
+    void SetMessageAllocatorFor_GetChunk(
+        ::grpc::MessageAllocator< ::basecamp::ChunkRequest, ::basecamp::Chunk>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::basecamp::ChunkRequest, ::basecamp::Chunk>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetChunk() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetChunk(::grpc::ServerContext* /*context*/, const ::basecamp::ChunkRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetChunk(
+      ::grpc::CallbackServerContext* /*context*/, const ::basecamp::ChunkRequest* /*request*/, ::basecamp::Chunk* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_Cancel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Cancel() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::basecamp::CancelRequest, ::basecamp::CancelReply>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::basecamp::CancelRequest* request, ::basecamp::CancelReply* response) { return this->Cancel(context, request, response); }));}
+    void SetMessageAllocatorFor_Cancel(
+        ::grpc::MessageAllocator< ::basecamp::CancelRequest, ::basecamp::CancelReply>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::basecamp::CancelRequest, ::basecamp::CancelReply>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Cancel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Cancel(::grpc::ServerContext* /*context*/, const ::basecamp::CancelRequest* /*request*/, ::basecamp::CancelReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Cancel(
+      ::grpc::CallbackServerContext* /*context*/, const ::basecamp::CancelRequest* /*request*/, ::basecamp::CancelReply* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_Health() {
-      ::grpc::Service::MarkMethodCallback(1,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::basecamp::HealthRequest, ::basecamp::HealthReply>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::basecamp::HealthRequest* request, ::basecamp::HealthReply* response) { return this->Health(context, request, response); }));}
     void SetMessageAllocatorFor_Health(
         ::grpc::MessageAllocator< ::basecamp::HealthRequest, ::basecamp::HealthReply>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::basecamp::HealthRequest, ::basecamp::HealthReply>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -213,7 +445,7 @@ class Basecamp final {
     virtual ::grpc::ServerUnaryReactor* Health(
       ::grpc::CallbackServerContext* /*context*/, const ::basecamp::HealthRequest* /*request*/, ::basecamp::HealthReply* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_Handle<WithCallbackMethod_Health<Service > > CallbackService;
+  typedef WithCallbackMethod_Handle<WithCallbackMethod_InitQuery<WithCallbackMethod_GetChunk<WithCallbackMethod_Cancel<WithCallbackMethod_Health<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_Handle : public BaseClass {
@@ -233,12 +465,63 @@ class Basecamp final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_InitQuery : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_InitQuery() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_InitQuery() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status InitQuery(::grpc::ServerContext* /*context*/, const ::basecamp::InitRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetChunk : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetChunk() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_GetChunk() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetChunk(::grpc::ServerContext* /*context*/, const ::basecamp::ChunkRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Cancel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Cancel() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_Cancel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Cancel(::grpc::ServerContext* /*context*/, const ::basecamp::CancelRequest* /*request*/, ::basecamp::CancelReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Health() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
@@ -270,12 +553,72 @@ class Basecamp final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_InitQuery : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_InitQuery() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_InitQuery() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status InitQuery(::grpc::ServerContext* /*context*/, const ::basecamp::InitRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestInitQuery(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetChunk : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetChunk() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_GetChunk() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetChunk(::grpc::ServerContext* /*context*/, const ::basecamp::ChunkRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetChunk(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Cancel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Cancel() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_Cancel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Cancel(::grpc::ServerContext* /*context*/, const ::basecamp::CancelRequest* /*request*/, ::basecamp::CancelReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCancel(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Health() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_Health() override {
       BaseClassMustBeDerivedFromService(this);
@@ -286,7 +629,7 @@ class Basecamp final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestHealth(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -312,12 +655,78 @@ class Basecamp final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_InitQuery : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_InitQuery() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->InitQuery(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_InitQuery() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status InitQuery(::grpc::ServerContext* /*context*/, const ::basecamp::InitRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* InitQuery(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetChunk : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetChunk() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetChunk(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetChunk() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetChunk(::grpc::ServerContext* /*context*/, const ::basecamp::ChunkRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetChunk(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_Cancel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Cancel() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Cancel(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Cancel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Cancel(::grpc::ServerContext* /*context*/, const ::basecamp::CancelRequest* /*request*/, ::basecamp::CancelReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Cancel(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_Health() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Health(context, request, response); }));
@@ -361,12 +770,93 @@ class Basecamp final {
     virtual ::grpc::Status StreamedHandle(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::basecamp::Request,::basecamp::Result>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_InitQuery : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_InitQuery() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::basecamp::InitRequest, ::basecamp::Chunk>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::basecamp::InitRequest, ::basecamp::Chunk>* streamer) {
+                       return this->StreamedInitQuery(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_InitQuery() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status InitQuery(::grpc::ServerContext* /*context*/, const ::basecamp::InitRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedInitQuery(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::basecamp::InitRequest,::basecamp::Chunk>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetChunk : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetChunk() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::basecamp::ChunkRequest, ::basecamp::Chunk>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::basecamp::ChunkRequest, ::basecamp::Chunk>* streamer) {
+                       return this->StreamedGetChunk(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetChunk() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetChunk(::grpc::ServerContext* /*context*/, const ::basecamp::ChunkRequest* /*request*/, ::basecamp::Chunk* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetChunk(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::basecamp::ChunkRequest,::basecamp::Chunk>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Cancel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Cancel() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::basecamp::CancelRequest, ::basecamp::CancelReply>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::basecamp::CancelRequest, ::basecamp::CancelReply>* streamer) {
+                       return this->StreamedCancel(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Cancel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Cancel(::grpc::ServerContext* /*context*/, const ::basecamp::CancelRequest* /*request*/, ::basecamp::CancelReply* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCancel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::basecamp::CancelRequest,::basecamp::CancelReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_Health : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Health() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::basecamp::HealthRequest, ::basecamp::HealthReply>(
             [this](::grpc::ServerContext* context,
@@ -387,9 +877,9 @@ class Basecamp final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedHealth(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::basecamp::HealthRequest,::basecamp::HealthReply>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_Handle<WithStreamedUnaryMethod_Health<Service > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_Handle<WithStreamedUnaryMethod_InitQuery<WithStreamedUnaryMethod_GetChunk<WithStreamedUnaryMethod_Cancel<WithStreamedUnaryMethod_Health<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_Handle<WithStreamedUnaryMethod_Health<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_Handle<WithStreamedUnaryMethod_InitQuery<WithStreamedUnaryMethod_GetChunk<WithStreamedUnaryMethod_Cancel<WithStreamedUnaryMethod_Health<Service > > > > > StreamedService;
 };
 
 }  // namespace basecamp

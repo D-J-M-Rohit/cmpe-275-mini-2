@@ -42,7 +42,9 @@ inline constexpr Node::Impl_::Impl_(
         port_{0},
         is_leader_{false},
         is_team_leader_{false},
-        max_inflight_{0} {}
+        max_inflight_{0},
+        max_retries_{0},
+        initial_backoff_ms_{0} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR Node::Node(::_pbi::ConstantInitialized)
@@ -98,7 +100,7 @@ const ::uint32_t
         protodesc_cold) = {
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_._has_bits_),
-        11, // hasbit index offset
+        13, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.name_),
         PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.host_),
         PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.port_),
@@ -107,6 +109,8 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.team_),
         PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.neighbors_),
         PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.max_inflight_),
+        PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.max_retries_),
+        PROTOBUF_FIELD_OFFSET(::topo::Node, _impl_.initial_backoff_ms_),
         1,
         2,
         4,
@@ -115,6 +119,8 @@ const ::uint32_t
         3,
         0,
         7,
+        8,
+        9,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::topo::Topology, _impl_._has_bits_),
         4, // hasbit index offset
@@ -125,7 +131,7 @@ const ::uint32_t
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::topo::Node)},
-        {19, sizeof(::topo::Topology)},
+        {23, sizeof(::topo::Topology)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::topo::_Node_default_instance_._instance,
@@ -133,18 +139,19 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 };
 const char descriptor_table_protodef_topology_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
-    "\n\016topology.proto\022\004topo\"\222\001\n\004Node\022\014\n\004name\030"
+    "\n\016topology.proto\022\004topo\"\303\001\n\004Node\022\014\n\004name\030"
     "\001 \001(\t\022\014\n\004host\030\002 \001(\t\022\014\n\004port\030\003 \001(\005\022\021\n\tis_"
     "leader\030\004 \001(\010\022\026\n\016is_team_leader\030\005 \001(\010\022\014\n\004"
     "team\030\006 \001(\t\022\021\n\tneighbors\030\007 \003(\t\022\024\n\014max_inf"
-    "light\030\010 \001(\005\"%\n\010Topology\022\031\n\005nodes\030\001 \003(\0132\n"
-    ".topo.Nodeb\006proto3"
+    "light\030\010 \001(\005\022\023\n\013max_retries\030\t \001(\005\022\032\n\022init"
+    "ial_backoff_ms\030\n \001(\005\"%\n\010Topology\022\031\n\005node"
+    "s\030\001 \003(\0132\n.topo.Nodeb\006proto3"
 };
 static ::absl::once_flag descriptor_table_topology_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_topology_2eproto = {
     false,
     false,
-    218,
+    267,
     descriptor_table_protodef_topology_2eproto,
     "topology.proto",
     &descriptor_table_topology_2eproto_once,
@@ -205,9 +212,9 @@ Node::Node(
                offsetof(Impl_, port_),
            reinterpret_cast<const char*>(&from._impl_) +
                offsetof(Impl_, port_),
-           offsetof(Impl_, max_inflight_) -
+           offsetof(Impl_, initial_backoff_ms_) -
                offsetof(Impl_, port_) +
-               sizeof(Impl_::max_inflight_));
+               sizeof(Impl_::initial_backoff_ms_));
 
   // @@protoc_insertion_point(copy_constructor:topo.Node)
 }
@@ -225,9 +232,9 @@ inline void Node::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   ::memset(reinterpret_cast<char*>(&_impl_) +
                offsetof(Impl_, port_),
            0,
-           offsetof(Impl_, max_inflight_) -
+           offsetof(Impl_, initial_backoff_ms_) -
                offsetof(Impl_, port_) +
-               sizeof(Impl_::max_inflight_));
+               sizeof(Impl_::initial_backoff_ms_));
 }
 Node::~Node() {
   // @@protoc_insertion_point(destructor:topo.Node)
@@ -301,16 +308,16 @@ Node::GetClassData() const {
   return Node_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 8, 0, 47, 2>
+const ::_pbi::TcParseTable<4, 10, 0, 47, 2>
 Node::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(Node, _impl_._has_bits_),
     0, // no _extensions_
-    8, 56,  // max_field_number, fast_idx_mask
+    10, 120,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967040,  // skipmap
+    4294966272,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    8,  // num_field_entries
+    10,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     Node_class_data_.base(),
@@ -320,10 +327,7 @@ Node::_table_ = {
     ::_pbi::TcParser::GetTable<::topo::Node>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // int32 max_inflight = 8;
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Node, _impl_.max_inflight_), 7>(),
-     {64, 7, 0,
-      PROTOBUF_FIELD_OFFSET(Node, _impl_.max_inflight_)}},
+    {::_pbi::TcParser::MiniParse, {}},
     // string name = 1;
     {::_pbi::TcParser::FastUS1,
      {10, 1, 0,
@@ -352,6 +356,23 @@ Node::_table_ = {
     {::_pbi::TcParser::FastUR1,
      {58, 0, 0,
       PROTOBUF_FIELD_OFFSET(Node, _impl_.neighbors_)}},
+    // int32 max_inflight = 8;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Node, _impl_.max_inflight_), 7>(),
+     {64, 7, 0,
+      PROTOBUF_FIELD_OFFSET(Node, _impl_.max_inflight_)}},
+    // int32 max_retries = 9;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Node, _impl_.max_retries_), 8>(),
+     {72, 8, 0,
+      PROTOBUF_FIELD_OFFSET(Node, _impl_.max_retries_)}},
+    // int32 initial_backoff_ms = 10;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Node, _impl_.initial_backoff_ms_), 9>(),
+     {80, 9, 0,
+      PROTOBUF_FIELD_OFFSET(Node, _impl_.initial_backoff_ms_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
@@ -371,6 +392,10 @@ Node::_table_ = {
     {PROTOBUF_FIELD_OFFSET(Node, _impl_.neighbors_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
     // int32 max_inflight = 8;
     {PROTOBUF_FIELD_OFFSET(Node, _impl_.max_inflight_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // int32 max_retries = 9;
+    {PROTOBUF_FIELD_OFFSET(Node, _impl_.max_retries_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // int32 initial_backoff_ms = 10;
+    {PROTOBUF_FIELD_OFFSET(Node, _impl_.initial_backoff_ms_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
   }},
   // no aux_entries
   {{
@@ -408,6 +433,11 @@ PROTOBUF_NOINLINE void Node::Clear() {
     ::memset(&_impl_.port_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.max_inflight_) -
         reinterpret_cast<char*>(&_impl_.port_)) + sizeof(_impl_.max_inflight_));
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00000300U)) {
+    ::memset(&_impl_.max_retries_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.initial_backoff_ms_) -
+        reinterpret_cast<char*>(&_impl_.max_retries_)) + sizeof(_impl_.initial_backoff_ms_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -508,6 +538,24 @@ PROTOBUF_NOINLINE void Node::Clear() {
     }
   }
 
+  // int32 max_retries = 9;
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    if (this_._internal_max_retries() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<9>(
+              stream, this_._internal_max_retries(), target);
+    }
+  }
+
+  // int32 initial_backoff_ms = 10;
+  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+    if (this_._internal_initial_backoff_ms() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<10>(
+              stream, this_._internal_initial_backoff_ms(), target);
+    }
+  }
+
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -591,6 +639,22 @@ PROTOBUF_NOINLINE void Node::Clear() {
       }
     }
   }
+  if (BatchCheckHasBit(cached_has_bits, 0x00000300U)) {
+    // int32 max_retries = 9;
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      if (this_._internal_max_retries() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_max_retries());
+      }
+    }
+    // int32 initial_backoff_ms = 10;
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (this_._internal_initial_backoff_ms() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_initial_backoff_ms());
+      }
+    }
+  }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
                                              &this_._impl_._cached_size_);
 }
@@ -664,6 +728,18 @@ void Node::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
   }
+  if (BatchCheckHasBit(cached_has_bits, 0x00000300U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      if (from._internal_max_retries() != 0) {
+        _this->_impl_.max_retries_ = from._impl_.max_retries_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (from._internal_initial_backoff_ms() != 0) {
+        _this->_impl_.initial_backoff_ms_ = from._impl_.initial_backoff_ms_;
+      }
+    }
+  }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
@@ -688,8 +764,8 @@ void Node::InternalSwap(Node* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.host_, &other->_impl_.host_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.team_, &other->_impl_.team_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Node, _impl_.max_inflight_)
-      + sizeof(Node::_impl_.max_inflight_)
+      PROTOBUF_FIELD_OFFSET(Node, _impl_.initial_backoff_ms_)
+      + sizeof(Node::_impl_.initial_backoff_ms_)
       - PROTOBUF_FIELD_OFFSET(Node, _impl_.port_)>(
           reinterpret_cast<char*>(&_impl_.port_),
           reinterpret_cast<char*>(&other->_impl_.port_));

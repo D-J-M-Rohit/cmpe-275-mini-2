@@ -24,23 +24,37 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x62\x61secamp.proto\x12\x08\x62\x61secamp\"N\n\x07Request\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x1e\n\x06target\x18\x02 \x01(\x0e\x32\x0e.basecamp.Team\x12\x0f\n\x07payload\x18\x03 \x01(\x0c\">\n\x06Result\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x12\n\ncompute_ms\x18\x02 \x01(\x03\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\x0f\n\rHealthRequest\"\x1b\n\x0bHealthReply\x12\x0c\n\x04node\x18\x01 \x01(\t*J\n\x04Team\x12\x14\n\x10TEAM_UNSPECIFIED\x10\x00\x12\x0e\n\nTEAM_GREEN\x10\x01\x12\r\n\tTEAM_PINK\x10\x02\x12\r\n\tTEAM_BOTH\x10\x03\x32s\n\x08\x42\x61secamp\x12-\n\x06Handle\x12\x11.basecamp.Request\x1a\x10.basecamp.Result\x12\x38\n\x06Health\x12\x17.basecamp.HealthRequest\x1a\x15.basecamp.HealthReplyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x62\x61secamp.proto\x12\x08\x62\x61secamp\"\\\n\x07Request\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\t\x12\x1e\n\x06target\x18\x03 \x01(\x0e\x32\x0e.basecamp.Team\x12\x0c\n\x04path\x18\x04 \x03(\t\">\n\x06Result\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x12\n\ncompute_ms\x18\x02 \x01(\x03\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\x7f\n\x0bInitRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x1e\n\x06target\x18\x02 \x01(\x0e\x32\x0e.basecamp.Team\x12\x0f\n\x07key_min\x18\x03 \x01(\x05\x12\x0f\n\x07key_max\x18\x04 \x01(\x05\x12\x1a\n\x12\x63\x61ncellation_token\x18\x05 \x01(\t\"S\n\x0c\x43hunkRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x63hunk_index\x18\x02 \x01(\x05\x12\x1a\n\x12\x63\x61ncellation_token\x18\x03 \x01(\t\"z\n\x05\x43hunk\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x13\n\x0b\x63hunk_index\x18\x02 \x01(\x05\x12\x10\n\x08is_final\x18\x03 \x01(\x08\x12\x14\n\x0ctotal_chunks\x18\x04 \x01(\x05\x12\x0c\n\x04\x64\x61ta\x18\x05 \x01(\x0c\x12\x12\n\ncompute_ms\x18\x06 \x01(\x03\"$\n\x06KVPair\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x03\"@\n\x08KVResult\x12\x1f\n\x05pairs\x18\x01 \x03(\x0b\x32\x10.basecamp.KVPair\x12\x13\n\x0bpartial_sum\x18\x02 \x01(\x03\"M\n\rCancelRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x1a\n\x12\x63\x61ncellation_token\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x03(\t\"1\n\x0b\x43\x61ncelReply\x12\x11\n\tcancelled\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x0f\n\rHealthRequest\"\x1b\n\x0bHealthReply\x12\x0c\n\x04node\x18\x01 \x01(\t*J\n\x04Team\x12\x14\n\x10TEAM_UNSPECIFIED\x10\x00\x12\x0e\n\nTEAM_GREEN\x10\x01\x12\r\n\tTEAM_PINK\x10\x02\x12\r\n\tTEAM_BOTH\x10\x03\x32\x97\x02\n\x08\x42\x61secamp\x12-\n\x06Handle\x12\x11.basecamp.Request\x1a\x10.basecamp.Result\x12\x33\n\tInitQuery\x12\x15.basecamp.InitRequest\x1a\x0f.basecamp.Chunk\x12\x33\n\x08GetChunk\x12\x16.basecamp.ChunkRequest\x1a\x0f.basecamp.Chunk\x12\x38\n\x06\x43\x61ncel\x12\x17.basecamp.CancelRequest\x1a\x15.basecamp.CancelReply\x12\x38\n\x06Health\x12\x17.basecamp.HealthRequest\x1a\x15.basecamp.HealthReplyb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'basecamp_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_TEAM']._serialized_start=218
-  _globals['_TEAM']._serialized_end=292
+  _globals['_TEAM']._serialized_start=804
+  _globals['_TEAM']._serialized_end=878
   _globals['_REQUEST']._serialized_start=28
-  _globals['_REQUEST']._serialized_end=106
-  _globals['_RESULT']._serialized_start=108
-  _globals['_RESULT']._serialized_end=170
-  _globals['_HEALTHREQUEST']._serialized_start=172
-  _globals['_HEALTHREQUEST']._serialized_end=187
-  _globals['_HEALTHREPLY']._serialized_start=189
-  _globals['_HEALTHREPLY']._serialized_end=216
-  _globals['_BASECAMP']._serialized_start=294
-  _globals['_BASECAMP']._serialized_end=409
+  _globals['_REQUEST']._serialized_end=120
+  _globals['_RESULT']._serialized_start=122
+  _globals['_RESULT']._serialized_end=184
+  _globals['_INITREQUEST']._serialized_start=186
+  _globals['_INITREQUEST']._serialized_end=313
+  _globals['_CHUNKREQUEST']._serialized_start=315
+  _globals['_CHUNKREQUEST']._serialized_end=398
+  _globals['_CHUNK']._serialized_start=400
+  _globals['_CHUNK']._serialized_end=522
+  _globals['_KVPAIR']._serialized_start=524
+  _globals['_KVPAIR']._serialized_end=560
+  _globals['_KVRESULT']._serialized_start=562
+  _globals['_KVRESULT']._serialized_end=626
+  _globals['_CANCELREQUEST']._serialized_start=628
+  _globals['_CANCELREQUEST']._serialized_end=705
+  _globals['_CANCELREPLY']._serialized_start=707
+  _globals['_CANCELREPLY']._serialized_end=756
+  _globals['_HEALTHREQUEST']._serialized_start=758
+  _globals['_HEALTHREQUEST']._serialized_end=773
+  _globals['_HEALTHREPLY']._serialized_start=775
+  _globals['_HEALTHREPLY']._serialized_end=802
+  _globals['_BASECAMP']._serialized_start=881
+  _globals['_BASECAMP']._serialized_end=1160
 # @@protoc_insertion_point(module_scope)

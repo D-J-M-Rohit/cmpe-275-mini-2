@@ -30,6 +30,10 @@ add_executable(basecamp_server
   cpp/server/main_server.cc
   cpp/server/handler.cc
   cpp/common/topology_loader.cc
+  cpp/common/chunk_manager.cc
+  cpp/common/admission_control.cc
+  cpp/common/cancellation.cc
+  cpp/workload/kv_dataset.cc
 )
 target_include_directories(basecamp_server PRIVATE ${CMAKE_SOURCE_DIR})
 target_link_libraries(basecamp_server PRIVATE proto_objs gRPC::grpc++)

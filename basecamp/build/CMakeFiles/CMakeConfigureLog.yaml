@@ -21,6 +21,7 @@ events:
       - "uname"
     candidate_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -33,10 +34,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/uname"
+      - "/Users/jay/.antigravity/antigravity/bin/uname"
       - "/opt/homebrew/bin/uname"
       - "/opt/homebrew/sbin/uname"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/uname"
@@ -46,6 +49,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -58,8 +62,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "message-v1"
@@ -67,7 +72,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Darwin - 25.0.0 - arm64
+      The system is: Darwin - 25.1.0 - arm64
   -
     kind: "find-v1"
     backtrace:
@@ -90,6 +95,7 @@ events:
       - "smake"
     candidate_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -102,10 +108,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/gmake"
+      - "/Users/jay/.antigravity/antigravity/bin/gmake"
       - "/opt/homebrew/bin/gmake"
       - "/opt/homebrew/sbin/gmake"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/gmake"
@@ -118,9 +126,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/gmake"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/gmake"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/gmake"
+      - "/opt/pmk/env/global/bin/gmake"
       - "/Users/jay/go/bin/gmake"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/gmake"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/gmake"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/make"
+      - "/Users/jay/.antigravity/antigravity/bin/make"
       - "/opt/homebrew/bin/make"
       - "/opt/homebrew/sbin/make"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/make"
@@ -130,6 +140,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -142,8 +153,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -172,6 +184,7 @@ events:
       - "clang++"
     candidate_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -184,10 +197,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/c++"
+      - "/Users/jay/.antigravity/antigravity/bin/c++"
       - "/opt/homebrew/bin/c++"
       - "/opt/homebrew/sbin/c++"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/c++"
@@ -197,6 +212,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -209,8 +225,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -240,6 +257,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -252,8 +270,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "message-v1"
@@ -340,6 +359,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -351,12 +371,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -369,8 +391,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -394,6 +417,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -405,12 +429,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -423,8 +449,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -448,6 +475,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -459,12 +487,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -477,8 +507,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -502,6 +533,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -513,12 +545,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -531,8 +565,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -556,6 +591,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -567,12 +603,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -585,8 +623,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -610,6 +649,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -621,12 +661,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -639,8 +681,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -664,6 +707,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -675,11 +719,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/objcopy"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/objcopy"
+      - "/Users/jay/.antigravity/antigravity/bin/objcopy"
       - "/opt/homebrew/bin/objcopy"
       - "/opt/homebrew/sbin/objcopy"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/objcopy"
@@ -691,12 +737,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/objcopy"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/objcopy"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/objcopy"
+      - "/opt/pmk/env/global/bin/objcopy"
       - "/Users/jay/go/bin/objcopy"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/objcopy"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/objcopy"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -709,8 +757,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -734,6 +783,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -745,11 +795,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/readelf"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/readelf"
+      - "/Users/jay/.antigravity/antigravity/bin/readelf"
       - "/opt/homebrew/bin/readelf"
       - "/opt/homebrew/sbin/readelf"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/readelf"
@@ -761,12 +813,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/readelf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/readelf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/readelf"
+      - "/opt/pmk/env/global/bin/readelf"
       - "/Users/jay/go/bin/readelf"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/readelf"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/readelf"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -779,8 +833,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -804,6 +859,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -815,11 +871,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/dlltool"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/dlltool"
+      - "/Users/jay/.antigravity/antigravity/bin/dlltool"
       - "/opt/homebrew/bin/dlltool"
       - "/opt/homebrew/sbin/dlltool"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/dlltool"
@@ -831,12 +889,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/dlltool"
+      - "/opt/pmk/env/global/bin/dlltool"
       - "/Users/jay/go/bin/dlltool"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/dlltool"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -849,8 +909,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -874,6 +935,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -885,11 +947,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/addr2line"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/addr2line"
+      - "/Users/jay/.antigravity/antigravity/bin/addr2line"
       - "/opt/homebrew/bin/addr2line"
       - "/opt/homebrew/sbin/addr2line"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/addr2line"
@@ -901,12 +965,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/addr2line"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/addr2line"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/addr2line"
+      - "/opt/pmk/env/global/bin/addr2line"
       - "/Users/jay/go/bin/addr2line"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/addr2line"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/addr2line"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -919,8 +985,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -944,6 +1011,7 @@ events:
     candidate_directories:
       - "/usr/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -955,11 +1023,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/tapi"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/tapi"
+      - "/Users/jay/.antigravity/antigravity/bin/tapi"
       - "/opt/homebrew/bin/tapi"
       - "/opt/homebrew/sbin/tapi"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/tapi"
@@ -971,12 +1041,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/tapi"
+      - "/opt/pmk/env/global/bin/tapi"
       - "/Users/jay/go/bin/tapi"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/tapi"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -989,8 +1061,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
   -
     kind: "find-v1"
@@ -1013,6 +1086,7 @@ events:
       - "install_name_tool"
     candidate_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -1025,10 +1099,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/install_name_tool"
+      - "/Users/jay/.antigravity/antigravity/bin/install_name_tool"
       - "/opt/homebrew/bin/install_name_tool"
       - "/opt/homebrew/sbin/install_name_tool"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/install_name_tool"
@@ -1038,6 +1114,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -1050,8 +1127,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
@@ -1063,8 +1141,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB"
-      binary: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB"
+      source: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1"
+      binary: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1077,20 +1155,20 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB'
+        Change Dir: '/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7088a/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7088a.dir/build.make CMakeFiles/cmTC_7088a.dir/build
-        Building CXX object CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-        Apple clang version 17.0.0 (clang-1700.3.19.1)
-        Target: arm64-apple-darwin25.0.0
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9126c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9126c.dir/build.make CMakeFiles/cmTC_9126c.dir/build
+        Building CXX object CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Apple clang version 17.0.0 (clang-1700.4.4.1)
+        Target: arm64-apple-darwin25.1.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB" -target-linker-version 1221.4 -v "-fcoverage-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB" -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-        clang -cc1 version 17.0.0 (clang-1700.3.19.1) default target arm64-apple-darwin25.0.0
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.1 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1" -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 17.0.0 (clang-1700.4.4.1) default target arm64-apple-darwin25.1.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
@@ -1103,15 +1181,15 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_7088a
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7088a.dir/link.txt --verbose=1
-        Apple clang version 17.0.0 (clang-1700.3.19.1)
-        Target: arm64-apple-darwin25.0.0
+        Linking CXX executable cmTC_9126c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9126c.dir/link.txt --verbose=1
+        Apple clang version 17.0.0 (clang-1700.4.4.1)
+        Target: arm64-apple-darwin25.1.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_7088a -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-1221.4
-        BUILD 16:29:08 Aug 11 2025
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.1 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_9126c -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld PROJECT:ld-1230.1
+        BUILD 16:18:08 Oct 17 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
         will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
         LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
@@ -1121,7 +1199,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7088a
+        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9126c
         
       exitCode: 0
   -
@@ -1165,20 +1243,20 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB']
+        ignore line: [Change Dir: '/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7088a/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7088a.dir/build.make CMakeFiles/cmTC_7088a.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
-        ignore line: [Target: arm64-apple-darwin25.0.0]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9126c/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9126c.dir/build.make CMakeFiles/cmTC_9126c.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Apple clang version 17.0.0 (clang-1700.4.4.1)]
+        ignore line: [Target: arm64-apple-darwin25.1.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB" -target-linker-version 1221.4 -v "-fcoverage-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-8lYRlB" -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [clang -cc1 version 17.0.0 (clang-1700.3.19.1) default target arm64-apple-darwin25.0.0]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.1 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb "-fdebug-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1" -target-linker-version 1230.1 -v "-fcoverage-compilation-dir=/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-VFL5u1" -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 17.0.0 (clang-1700.4.4.1) default target arm64-apple-darwin25.1.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
@@ -1191,13 +1269,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_7088a]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7088a.dir/link.txt --verbose=1]
-        ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
-        ignore line: [Target: arm64-apple-darwin25.0.0]
+        ignore line: [Linking CXX executable cmTC_9126c]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9126c.dir/link.txt --verbose=1]
+        ignore line: [Apple clang version 17.0.0 (clang-1700.4.4.1)]
+        ignore line: [Target: arm64-apple-darwin25.1.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_7088a -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.1 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_9126c -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1208,18 +1286,18 @@ events:
           arg [-platform_version] ==> ignore
           arg [macos] ==> ignore
           arg [26.0.0] ==> ignore
-          arg [26.0] ==> ignore
+          arg [26.1] ==> ignore
           arg [-syslibroot] ==> ignore
           arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_7088a] ==> ignore
+          arg [cmTC_9126c] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_7088a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_9126c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
@@ -1247,8 +1325,8 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Running the CXX compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-1221.4
-      BUILD 16:29:08 Aug 11 2025
+      @(#)PROGRAM:ld PROJECT:ld-1230.1
+      BUILD 16:18:08 Oct 17 2025
       configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
       will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
       LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
@@ -1257,7 +1335,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindZLIB.cmake:152 (find_path)"
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
       - "CMakeLists.txt:11 (find_package)"
     mode: "path"
     variable: "ZLIB_INCLUDE_DIR"
@@ -1275,6 +1353,8 @@ events:
     candidate_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/include/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/include/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/include/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/include/"
@@ -1299,10 +1379,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/include/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/include/"
+      - "/opt/pmk/env/global/bin/"
       - "/Users/jay/go/bin/include/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/include/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/include/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/include/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/"
@@ -1364,6 +1446,8 @@ events:
     searched_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/include/zlib.h"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/zlib.h"
+      - "/Users/jay/.antigravity/antigravity/bin/include/zlib.h"
+      - "/Users/jay/.antigravity/antigravity/bin/zlib.h"
       - "/opt/homebrew/bin/include/zlib.h"
       - "/opt/homebrew/bin/zlib.h"
       - "/opt/homebrew/sbin/include/zlib.h"
@@ -1388,15 +1472,18 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/zlib.h"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/include/zlib.h"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/zlib.h"
+      - "/opt/pmk/env/global/bin/include/zlib.h"
+      - "/opt/pmk/env/global/bin/zlib.h"
       - "/Users/jay/go/bin/include/zlib.h"
       - "/Users/jay/go/bin/zlib.h"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/include/zlib.h"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/zlib.h"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/include/zlib.h"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/zlib.h"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/include/zlib.h"
     found: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -1409,8 +1496,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -1442,7 +1530,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindZLIB.cmake:182 (find_library)"
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
       - "CMakeLists.txt:11 (find_package)"
     mode: "library"
     variable: "ZLIB_LIBRARY_RELEASE"
@@ -1466,6 +1554,7 @@ events:
       - "zlibstat"
     candidate_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -1476,7 +1565,7 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -1501,6 +1590,14 @@ events:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/bin/"
@@ -1581,18 +1678,19 @@ events:
       - "/Users/jay/go/bin/"
       - "/Users/jay/go/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd"
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -1605,8 +1703,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -1638,7 +1737,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindZLIB.cmake:183 (find_library)"
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
       - "CMakeLists.txt:11 (find_package)"
     mode: "library"
     variable: "ZLIB_LIBRARY_DEBUG"
@@ -1663,6 +1762,7 @@ events:
       - "zlibstatd"
     candidate_directories:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
@@ -1673,7 +1773,7 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -1699,6 +1799,15 @@ events:
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
       - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
+      - "/Users/jay/.antigravity/antigravity/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/bin/"
@@ -1789,15 +1898,15 @@ events:
       - "/Users/jay/go/bin/"
       - "/Users/jay/go/bin/"
       - "/Users/jay/go/bin/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
@@ -1937,6 +2046,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -1949,8 +2059,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -1987,20 +2098,20 @@ events:
       - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
       - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
       - "/opt/homebrew/lib/cmake/absl/abslConfig.cmake:4 (find_dependency)"
-      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:9 (find_package)"
+      - "/opt/homebrew/lib/cmake/protobuf/protobuf-config.cmake:9 (find_package)"
       - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
       - "CMakeLists.txt:11 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-wsWivD"
-      binary: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-wsWivD"
+      source: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-sTUjMv"
+      binary: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-sTUjMv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/opt/homebrew/opt/grpc/lib/cmake/grpc/modules"
+      CMAKE_MODULE_PATH: "/opt/homebrew/lib/cmake/grpc/modules"
       CMAKE_OSX_ARCHITECTURES: ""
       CMAKE_OSX_DEPLOYMENT_TARGET: ""
       CMAKE_OSX_SYSROOT: ""
@@ -2008,23 +2119,23 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-wsWivD'
+        Change Dir: '/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-sTUjMv'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2cfd6/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2cfd6.dir/build.make CMakeFiles/cmTC_2cfd6.dir/build
-        Building CXX object CMakeFiles/cmTC_2cfd6.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_2cfd6.dir/src.cxx.o -MF CMakeFiles/cmTC_2cfd6.dir/src.cxx.o.d -o CMakeFiles/cmTC_2cfd6.dir/src.cxx.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-wsWivD/src.cxx"
-        Linking CXX executable cmTC_2cfd6
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2cfd6.dir/link.txt --verbose=1
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2cfd6.dir/src.cxx.o -o cmTC_2cfd6
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ee8ac/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ee8ac.dir/build.make CMakeFiles/cmTC_ee8ac.dir/build
+        Building CXX object CMakeFiles/cmTC_ee8ac.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_ee8ac.dir/src.cxx.o -MF CMakeFiles/cmTC_ee8ac.dir/src.cxx.o.d -o CMakeFiles/cmTC_ee8ac.dir/src.cxx.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/CMakeScratch/TryCompile-sTUjMv/src.cxx"
+        Linking CXX executable cmTC_ee8ac
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee8ac.dir/link.txt --verbose=1
+        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ee8ac.dir/src.cxx.o -o cmTC_ee8ac
         
       exitCode: 0
   -
     kind: "find_package-v1"
     backtrace:
-      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:9 (find_package)"
+      - "/opt/homebrew/lib/cmake/protobuf/protobuf-config.cmake:9 (find_package)"
       - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
       - "CMakeLists.txt:11 (find_package)"
     name: "absl"
     configs:
@@ -2074,6 +2185,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/Users/jay/.antigravity/antigravity/abslConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/absl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/opt/homebrew/abslConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -2088,6 +2207,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -2100,8 +2220,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2130,9 +2251,9 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:12 (find_package)"
+      - "/opt/homebrew/lib/cmake/protobuf/protobuf-config.cmake:12 (find_package)"
       - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
       - "CMakeLists.txt:11 (find_package)"
     name: "utf8_range"
     configs:
@@ -2182,6 +2303,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/Users/jay/.antigravity/antigravity/utf8_rangeConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/utf8_range-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/opt/homebrew/utf8_rangeConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -2200,6 +2329,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -2212,8 +2342,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2242,7 +2373,128 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
+      - "CMakeLists.txt:11 (find_package)"
+    name: "Protobuf"
+    configs:
+      -
+        filename: "ProtobufConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "protobuf-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Protobuf"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/pkgRedirects/ProtobufConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/pkgRedirects/protobuf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/ProtobufConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/protobuf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/ProtobufConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/protobuf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/ProtobufConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/protobuf-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/lib/cmake/protobuf/ProtobufConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/lib/cmake/protobuf/protobuf-config.cmake"
+      mode: "config"
+      version: "33.0.0"
+    search_context:
+      ENV{PATH}:
+        - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Users/jay/go/bin"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/jay/go/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
       - "CMakeLists.txt:11 (find_package)"
     name: "OpenSSL"
     configs:
@@ -2292,6 +2544,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/Users/jay/.antigravity/antigravity/OpenSSLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/openssl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/opt/homebrew/OpenSSLConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -2306,6 +2566,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -2318,8 +2579,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2346,11 +2608,11 @@ events:
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
       CMAKE_MODULE_PATH:
-        - "/opt/homebrew/opt/grpc/lib/cmake/grpc/modules"
+        - "/opt/homebrew/lib/cmake/grpc/modules"
   -
     kind: "find_package-v1"
     backtrace:
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:14 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:14 (find_package)"
       - "CMakeLists.txt:11 (find_package)"
     name: "c-ares"
     configs:
@@ -2400,6 +2662,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/Users/jay/.antigravity/antigravity/c-aresConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/c-ares-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/opt/homebrew/c-aresConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -2418,6 +2688,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -2430,8 +2701,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2458,11 +2730,11 @@ events:
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
       CMAKE_MODULE_PATH:
-        - "/opt/homebrew/opt/grpc/lib/cmake/grpc/modules"
+        - "/opt/homebrew/lib/cmake/grpc/modules"
   -
     kind: "find_package-v1"
     backtrace:
-      - "/opt/homebrew/opt/grpc/lib/cmake/grpc/gRPCConfig.cmake:20 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:20 (find_package)"
       - "CMakeLists.txt:11 (find_package)"
     name: "re2"
     configs:
@@ -2512,6 +2784,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/Users/jay/.antigravity/antigravity/re2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/re2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/opt/homebrew/re2Config.cmake"
         mode: "config"
         reason: "no_exist"
@@ -2526,6 +2806,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
@@ -2538,8 +2819,9 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
         - "/Users/jay/go/bin"
-        - "/Users/jay/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
         - "/Users/jay/go/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2566,5 +2848,120 @@ events:
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
       CMAKE_MODULE_PATH:
-        - "/opt/homebrew/opt/grpc/lib/cmake/grpc/modules"
+        - "/opt/homebrew/lib/cmake/grpc/modules"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:11 (find_package)"
+    name: "gRPC"
+    configs:
+      -
+        filename: "gRPCConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "grpc-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "gRPC"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/pkgRedirects/gRPCConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/pkgRedirects/grpc-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/gRPCConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/grpc-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/gRPCConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/jay/.antigravity/antigravity/grpc-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/gRPCConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/grpc-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake"
+      mode: "config"
+      version: "1.76.0"
+    search_context:
+      ENV{PATH}:
+        - "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/.venv/bin"
+        - "/Users/jay/.antigravity/antigravity/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Users/jay/go/bin"
+        - "/Users/jay/.antigravity/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/jay/go/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
 ...

@@ -224,6 +224,8 @@ class Node final : public ::google::protobuf::Message
     kIsLeaderFieldNumber = 4,
     kIsTeamLeaderFieldNumber = 5,
     kMaxInflightFieldNumber = 8,
+    kMaxRetriesFieldNumber = 9,
+    kInitialBackoffMsFieldNumber = 10,
   };
   // repeated string neighbors = 7;
   int neighbors_size() const;
@@ -332,11 +334,31 @@ class Node final : public ::google::protobuf::Message
   void _internal_set_max_inflight(::int32_t value);
 
   public:
+  // int32 max_retries = 9;
+  void clear_max_retries() ;
+  ::int32_t max_retries() const;
+  void set_max_retries(::int32_t value);
+
+  private:
+  ::int32_t _internal_max_retries() const;
+  void _internal_set_max_retries(::int32_t value);
+
+  public:
+  // int32 initial_backoff_ms = 10;
+  void clear_initial_backoff_ms() ;
+  ::int32_t initial_backoff_ms() const;
+  void set_initial_backoff_ms(::int32_t value);
+
+  private:
+  ::int32_t _internal_initial_backoff_ms() const;
+  void _internal_set_initial_backoff_ms(::int32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:topo.Node)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 8,
+  static const ::google::protobuf::internal::TcParseTable<4, 10,
                                    0, 47,
                                    2>
       _table_;
@@ -366,6 +388,8 @@ class Node final : public ::google::protobuf::Message
     bool is_leader_;
     bool is_team_leader_;
     ::int32_t max_inflight_;
+    ::int32_t max_retries_;
+    ::int32_t initial_backoff_ms_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -952,6 +976,56 @@ inline ::int32_t Node::_internal_max_inflight() const {
 inline void Node::_internal_set_max_inflight(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.max_inflight_ = value;
+}
+
+// int32 max_retries = 9;
+inline void Node::clear_max_retries() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.max_retries_ = 0;
+  ClearHasBit(_impl_._has_bits_[0],
+                  0x00000100U);
+}
+inline ::int32_t Node::max_retries() const {
+  // @@protoc_insertion_point(field_get:topo.Node.max_retries)
+  return _internal_max_retries();
+}
+inline void Node::set_max_retries(::int32_t value) {
+  _internal_set_max_retries(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  // @@protoc_insertion_point(field_set:topo.Node.max_retries)
+}
+inline ::int32_t Node::_internal_max_retries() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.max_retries_;
+}
+inline void Node::_internal_set_max_retries(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.max_retries_ = value;
+}
+
+// int32 initial_backoff_ms = 10;
+inline void Node::clear_initial_backoff_ms() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.initial_backoff_ms_ = 0;
+  ClearHasBit(_impl_._has_bits_[0],
+                  0x00000200U);
+}
+inline ::int32_t Node::initial_backoff_ms() const {
+  // @@protoc_insertion_point(field_get:topo.Node.initial_backoff_ms)
+  return _internal_initial_backoff_ms();
+}
+inline void Node::set_initial_backoff_ms(::int32_t value) {
+  _internal_set_initial_backoff_ms(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
+  // @@protoc_insertion_point(field_set:topo.Node.initial_backoff_ms)
+}
+inline ::int32_t Node::_internal_initial_backoff_ms() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.initial_backoff_ms_;
+}
+inline void Node::_internal_set_initial_backoff_ms(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.initial_backoff_ms_ = value;
 }
 
 // -------------------------------------------------------------------
