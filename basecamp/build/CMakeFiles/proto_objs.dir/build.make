@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp"
+CMAKE_SOURCE_DIR = /home/tkamran/Code/275/cmpe-275-mini-2/basecamp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build"
+CMAKE_BINARY_DIR = /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/proto_objs.dir/depend.make
@@ -73,46 +73,46 @@ CMakeFiles/proto_objs.dir/codegen:
 .PHONY : CMakeFiles/proto_objs.dir/codegen
 
 CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o: CMakeFiles/proto_objs.dir/flags.make
-CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/basecamp.pb.cc
+CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.pb.cc
 CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o: CMakeFiles/proto_objs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o -MF CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o.d -o CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.pb.cc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o -MF CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o.d -o CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.pb.cc
 
 CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.pb.cc" > CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.pb.cc > CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.i
 
 CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.pb.cc" -o CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.pb.cc -o CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.s
 
 CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o: CMakeFiles/proto_objs.dir/flags.make
-CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/basecamp.grpc.pb.cc
+CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.grpc.pb.cc
 CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o: CMakeFiles/proto_objs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o -MF CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o.d -o CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.grpc.pb.cc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o -MF CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o.d -o CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.grpc.pb.cc
 
 CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.grpc.pb.cc" > CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.grpc.pb.cc > CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.i
 
 CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.grpc.pb.cc" -o CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.grpc.pb.cc -o CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.s
 
 CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o: CMakeFiles/proto_objs.dir/flags.make
-CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 2/basecamp/cpp/topology.pb.cc
+CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/topology.pb.cc
 CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o: CMakeFiles/proto_objs.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o -MF CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o.d -o CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/topology.pb.cc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o -MF CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o.d -o CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/topology.pb.cc
 
 CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/topology.pb.cc" > CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/topology.pb.cc > CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.i
 
 CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/topology.pb.cc" -o CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/topology.pb.cc -o CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.s
 
 # Object files for target proto_objs
 proto_objs_OBJECTS = \
@@ -128,7 +128,7 @@ libproto_objs.a: CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o
 libproto_objs.a: CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o
 libproto_objs.a: CMakeFiles/proto_objs.dir/build.make
 libproto_objs.a: CMakeFiles/proto_objs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libproto_objs.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libproto_objs.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/proto_objs.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/proto_objs.dir/link.txt --verbose=$(VERBOSE)
 
@@ -141,6 +141,6 @@ CMakeFiles/proto_objs.dir/clean:
 .PHONY : CMakeFiles/proto_objs.dir/clean
 
 CMakeFiles/proto_objs.dir/depend:
-	cd "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp" "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp" "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build" "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build" "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/build/CMakeFiles/proto_objs.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tkamran/Code/275/cmpe-275-mini-2/basecamp /home/tkamran/Code/275/cmpe-275-mini-2/basecamp /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles/proto_objs.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/proto_objs.dir/depend
 

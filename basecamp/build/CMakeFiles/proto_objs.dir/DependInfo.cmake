@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.grpc.pb.cc" "CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o" "gcc" "CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o.d"
-  "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/basecamp.pb.cc" "CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o" "gcc" "CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o.d"
-  "/Users/jay/Desktop/sjsu/sem 3/275/mini 2/basecamp/cpp/topology.pb.cc" "CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o" "gcc" "CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o.d"
+  "/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.grpc.pb.cc" "CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o" "gcc" "CMakeFiles/proto_objs.dir/cpp/basecamp.grpc.pb.cc.o.d"
+  "/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/basecamp.pb.cc" "CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o" "gcc" "CMakeFiles/proto_objs.dir/cpp/basecamp.pb.cc.o.d"
+  "/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/topology.pb.cc" "CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o" "gcc" "CMakeFiles/proto_objs.dir/cpp/topology.pb.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
