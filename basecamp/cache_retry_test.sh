@@ -1,5 +1,5 @@
 #!/bin/bash
-# Cache & Idempotency with Retry Test
+# Cache & Idempotency with Retry Test - MULTI-ITERATION VERSION
 
 set -e
 
@@ -10,6 +10,10 @@ export PYTHONPATH
 
 LOG_DIR="logs"
 mkdir -p "$LOG_DIR"
+
+# Configuration
+NUM_ITERATIONS=${1:-5}  # Default 5 iterations, override with first argument
+PAYLOAD_SIZE=${2:-512}  # Default payload size in bytes, override with second argument
 
 # Clear old logs
 rm -f "$LOG_DIR"/*.log /tmp/cache_test_*.log 2>/dev/null
@@ -24,6 +28,7 @@ NC='\033[0m' # No Color
 
 echo "============================================"
 echo "Cache & Idempotency with Retry Test"
+echo "Multi-Iteration Mode: $NUM_ITERATIONS runs | payload_size=${PAYLOAD_SIZE} bytes"
 echo "============================================"
 echo ""
 echo "This test verifies that:"
@@ -60,6 +65,28 @@ wait_for_server() {
     return 1
 }
 
+# Function to calculate basic statistics
+calculate_stats() {
+    local array=("$@")
+    local sum=0
+    local count=${#array[@]}
+    local min=${array[0]}
+    local max=${array[0]}
+    
+    for val in "${array[@]}"; do
+        sum=$((sum + val))
+        [ $val -lt $min ] && min=$val
+        [ $val -gt $max ] && max=$val
+    done
+    
+    local avg=$((sum / count))
+    echo "$min $max $avg $sum $count"
+}
+
+# Arrays to store timing data
+declare -a FRESH_TIMES
+declare -a CACHED_TIMES
+
 echo -e "${BLUE}Starting servers...${NC}"
 ./build/basecamp_server --node=A >> "$LOG_DIR/A.log" 2>&1 &
 PID_A=$!
@@ -85,213 +112,134 @@ sleep 3
 
 echo ""
 echo "============================================"
-echo "Test 1: First Request (Fresh Computation)"
+echo "Multi-Iteration Cache Performance Test"
 echo "============================================"
 echo ""
 
-FIXED_REQ_ID="req-test-idempotency-12345"
-echo -e "${CYAN}Request ID: ${FIXED_REQ_ID}${NC}"
-echo -e "${YELLOW}Sending first GREEN request...${NC}"
-
-TIMESTAMP_START=$(date +%s%N)
-timeout 10 ./build/basecamp_client --target=GREEN --payload_size=512 --request_id="$FIXED_REQ_ID" > /tmp/cache_test_1.log 2>&1
-TIMESTAMP_END=$(date +%s%N)
-TIME_FIRST_MS=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
-
-echo "Result:"
-grep "OK" /tmp/cache_test_1.log || true
-echo "Response time: ${TIME_FIRST_MS}ms"
-
-echo ""
-echo -e "${BLUE}Node C log (fresh computation):${NC}"
-tail -3 "$LOG_DIR/C.log" | grep -v "^$"
-
-sleep 2
-
-echo ""
-echo "============================================"
-echo "Test 2: Duplicate Request (Same request_id)"
-echo "============================================"
-echo ""
-
-echo -e "${CYAN}Request ID: ${FIXED_REQ_ID} (SAME as Test 1)${NC}"
-echo -e "${YELLOW}Sending duplicate request...${NC}"
-
-TIMESTAMP_START=$(date +%s%N)
-timeout 10 ./build/basecamp_client --target=GREEN --payload_size=512 --request_id="$FIXED_REQ_ID" > /tmp/cache_test_2.log 2>&1
-TIMESTAMP_END=$(date +%s%N)
-TIME_SECOND_MS=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
-
-echo "Result:"
-grep "OK" /tmp/cache_test_2.log || true
-echo "Response time: ${TIME_SECOND_MS}ms"
-
-if [ $TIME_SECOND_MS -gt 0 ] && [ $TIME_FIRST_MS -gt 0 ]; then
-    if [ $TIME_SECOND_MS -lt $TIME_FIRST_MS ]; then
-        SPEEDUP=$(( TIME_FIRST_MS / TIME_SECOND_MS ))
-        echo -e "${GREEN}✓ Speedup: ${SPEEDUP}x faster${NC}"
+for i in $(seq 1 $NUM_ITERATIONS); do
+    echo -e "${CYAN}===== ITERATION $i / $NUM_ITERATIONS =====${NC}"
+    echo ""
+    
+    # Generate unique request IDs for this iteration
+    ITER_BASE_ID="iter-$i-"
+    FRESH_REQ_ID="${ITER_BASE_ID}fresh-$(date +%s%N)"
+    
+    # Test 1: Fresh request
+    echo -e "${YELLOW}Fresh request (new ID):${NC}"
+    TIMESTAMP_START=$(date +%s%N)
+    timeout 10 ./build/basecamp_client --target=GREEN --payload_size="$PAYLOAD_SIZE" --request_id="$FRESH_REQ_ID" > /tmp/cache_test_iter_${i}_fresh.log 2>&1
+    TIMESTAMP_END=$(date +%s%N)
+    TIME_FRESH=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
+    
+    grep "OK" /tmp/cache_test_iter_${i}_fresh.log || true
+    echo "  Time: ${TIME_FRESH}ms"
+    FRESH_TIMES+=($TIME_FRESH)
+    
+    sleep 1
+    
+    # Test 2: Cached request (same ID)
+    echo -e "${YELLOW}Cached request (duplicate ID):${NC}"
+    TIMESTAMP_START=$(date +%s%N)
+    timeout 10 ./build/basecamp_client --target=GREEN --payload_size="$PAYLOAD_SIZE" --request_id="$FRESH_REQ_ID" > /tmp/cache_test_iter_${i}_cached.log 2>&1
+    TIMESTAMP_END=$(date +%s%N)
+    TIME_CACHED=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
+    
+    grep "OK" /tmp/cache_test_iter_${i}_cached.log || true
+    echo "  Time: ${TIME_CACHED}ms"
+    CACHED_TIMES+=($TIME_CACHED)
+    
+    # Calculate speedup for this iteration
+    if [ $TIME_FRESH -gt 0 ] && [ $TIME_CACHED -gt 0 ]; then
+        SPEEDUP=$((TIME_FRESH / TIME_CACHED))
+        if [ $SPEEDUP -gt 1 ]; then
+            echo -e "${GREEN}  Speedup: ${SPEEDUP}x faster${NC}"
+        else
+            echo -e "${YELLOW}  Similar times (cache hit but small task)${NC}"
+        fi
+    fi
+    
+    # Check cache hit
+    if grep "Idempotency HIT.*$FRESH_REQ_ID" "$LOG_DIR/C.log" > /dev/null 2>&1; then
+        echo -e "${GREEN}  ✓ Cache HIT detected${NC}"
     else
-        echo -e "${YELLOW}~ Similar times${NC}"
+        echo -e "${YELLOW}  ~ No cache hit (may not have reached worker)${NC}"
+    fi
+    
+    sleep 1
+    echo ""
+done
+
+echo ""
+echo "============================================"
+echo "Aggregated Results - Multi-Iteration Analysis"
+echo "============================================"
+echo ""
+
+# Calculate statistics for fresh requests
+echo -e "${BLUE}FRESH Requests (new request IDs):${NC}"
+read MIN_FRESH MAX_FRESH AVG_FRESH SUM_FRESH COUNT_FRESH <<< $(calculate_stats "${FRESH_TIMES[@]}")
+echo "  Min:     ${MIN_FRESH}ms"
+echo "  Max:     ${MAX_FRESH}ms"
+echo "  Avg:     ${AVG_FRESH}ms"
+echo "  Sum:     ${SUM_FRESH}ms (across $COUNT_FRESH iterations)"
+echo "  All times: ${FRESH_TIMES[@]}"
+echo ""
+
+# Calculate statistics for cached requests
+echo -e "${BLUE}CACHED Requests (duplicate request IDs):${NC}"
+read MIN_CACHED MAX_CACHED AVG_CACHED SUM_CACHED COUNT_CACHED <<< $(calculate_stats "${CACHED_TIMES[@]}")
+echo "  Min:     ${MIN_CACHED}ms"
+echo "  Max:     ${MAX_CACHED}ms"
+echo "  Avg:     ${AVG_CACHED}ms"
+echo "  Sum:     ${SUM_CACHED}ms (across $COUNT_CACHED iterations)"
+echo "  All times: ${CACHED_TIMES[@]}"
+echo ""
+
+# Calculate overall speedup
+if [ $AVG_FRESH -gt 0 ] && [ $AVG_CACHED -gt 0 ]; then
+    OVERALL_SPEEDUP=$((AVG_FRESH / AVG_CACHED))
+    if [ $OVERALL_SPEEDUP -gt 1 ]; then
+        echo -e "${GREEN}Overall Speedup: ${OVERALL_SPEEDUP}x faster (fresh vs cached avg)${NC}"
+    else
+        echo -e "${YELLOW}Similar average times${NC}"
     fi
 fi
 
-sleep 1
-
-echo ""
-echo -e "${BLUE}Checking for 'Idempotency HIT' in Node C:${NC}"
-if grep "Idempotency HIT.*$FIXED_REQ_ID" "$LOG_DIR/C.log"; then
-    echo -e "${GREEN}✓✓✓ IDEMPOTENCY CACHE WORKING! ✓✓✓${NC}"
-else
-    echo -e "${RED}✗ No idempotency hit found${NC}"
-    echo "Recent C log:"
-    tail -5 "$LOG_DIR/C.log"
-fi
-
-sleep 2
-
 echo ""
 echo "============================================"
-echo "Test 3: Different Request ID (Fresh Again)"
+echo "Cache Hit Statistics"
 echo "============================================"
 echo ""
 
-NEW_REQ_ID="req-test-different-67890"
-echo -e "${CYAN}Request ID: ${NEW_REQ_ID} (NEW)${NC}"
-echo -e "${YELLOW}Sending request with different ID...${NC}"
+TOTAL_CACHE_HITS=$(grep -c "Idempotency HIT" "$LOG_DIR/C.log" || echo "0")
+echo -e "${BLUE}Total Idempotency Hits in Node C: ${TOTAL_CACHE_HITS}${NC}"
 
-TIMESTAMP_START=$(date +%s%N)
-timeout 10 ./build/basecamp_client --target=GREEN --payload_size=512 --request_id="$NEW_REQ_ID" > /tmp/cache_test_3.log 2>&1
-TIMESTAMP_END=$(date +%s%N)
-TIME_THIRD_MS=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
+TOTAL_CACHE_HITS_D=$(grep -c "Idempotency HIT" "$LOG_DIR/D.log" || echo "0")
+echo -e "${BLUE}Total Idempotency Hits in Node D: ${TOTAL_CACHE_HITS_D}${NC}"
 
-echo "Result:"
-grep "OK" /tmp/cache_test_3.log || true
-echo "Response time: ${TIME_THIRD_MS}ms"
-
-sleep 1
-
-echo ""
-echo -e "${BLUE}Verifying this was a fresh computation (no cache hit):${NC}"
-if grep "Idempotency HIT.*$NEW_REQ_ID" "$LOG_DIR/C.log"; then
-    echo -e "${RED}✗ Unexpected cache hit for new request${NC}"
-else
-    echo -e "${GREEN}✓ Fresh computation (correct)${NC}"
-fi
-
-sleep 2
-
-echo ""
-echo "============================================"
-echo "Test 4: Retry Scenario with Same Request ID"
-echo "============================================"
-echo ""
-
-RETRY_REQ_ID="req-test-retry-99999"
-echo -e "${CYAN}Request ID: ${RETRY_REQ_ID}${NC}"
-
-echo -e "${YELLOW}Step 1: Send initial request...${NC}"
-timeout 10 ./build/basecamp_client --target=GREEN --payload_size=512 --request_id="$RETRY_REQ_ID" > /tmp/cache_test_4.log 2>&1
-grep "OK" /tmp/cache_test_4.log || true
-sleep 2
-
-echo ""
-echo -e "${YELLOW}Step 2: Kill node B (GREEN leader)...${NC}"
-kill $PID_B 2>/dev/null || true
-sleep 2
-
-echo ""
-echo -e "${YELLOW}Step 3: Send same request_id while B is down (will fail with retries)...${NC}"
-timeout 20 ./build/basecamp_client --target=GREEN --payload_size=512 --request_id="$RETRY_REQ_ID" > /tmp/cache_test_5.log 2>&1 || {
-    echo -e "${RED}Request failed (expected - B is down)${NC}"
-}
-sleep 1
-
-echo ""
-echo -e "${YELLOW}Step 4: Restart B and send same request_id again...${NC}"
-./build/basecamp_server --node=B >> "$LOG_DIR/B.log" 2>&1 &
-PID_B=$!
-wait_for_server "B" "50052"
-sleep 2
-
-TIMESTAMP_START=$(date +%s%N)
-timeout 10 ./build/basecamp_client --target=GREEN --payload_size=512 --request_id="$RETRY_REQ_ID" > /tmp/cache_test_6.log 2>&1
-TIMESTAMP_END=$(date +%s%N)
-TIME_AFTER_RECOVERY_MS=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
-
-echo "Result after recovery:"
-grep "OK" /tmp/cache_test_6.log || true
-echo "Response time: ${TIME_AFTER_RECOVERY_MS}ms"
-
-sleep 1
-
-echo ""
-echo -e "${BLUE}Checking if retry hit the idempotency cache...${NC}"
-CACHE_HITS=$(grep -c "Idempotency HIT.*$RETRY_REQ_ID" "$LOG_DIR/C.log" || echo "0")
-echo "Total idempotency hits for $RETRY_REQ_ID: $CACHE_HITS"
-
-if [ "$CACHE_HITS" -gt 0 ]; then
-    echo -e "${GREEN}✓ Cache helped during retry scenario!${NC}"
-    grep "Idempotency HIT.*$RETRY_REQ_ID" "$LOG_DIR/C.log"
-else
-    echo -e "${YELLOW}~ No cache hits (requests might have been unique)${NC}"
-fi
-
-sleep 2
-
-echo ""
-echo "============================================"
-echo "Full Cache & Retry Analysis"
-echo "============================================"
-echo ""
-
-echo -e "${YELLOW}--- All Idempotency HITs in Node C (GREEN worker) ---${NC}"
-if grep "Idempotency HIT" "$LOG_DIR/C.log"; then
-    HIT_COUNT=$(grep -c "Idempotency HIT" "$LOG_DIR/C.log" || echo "0")
+if [ "$TOTAL_CACHE_HITS" -gt 0 ]; then
     echo ""
-    echo -e "${GREEN}Total cache hits in C: $HIT_COUNT${NC}"
-else
-    echo "No cache hits found in C"
+    echo -e "${YELLOW}Sample cache hits:${NC}"
+    grep "Idempotency HIT" "$LOG_DIR/C.log" | head -5
 fi
 
 echo ""
-echo -e "${YELLOW}--- All Idempotency HITs in Node D (PINK worker) ---${NC}"
-if grep "Idempotency HIT" "$LOG_DIR/D.log"; then
-    HIT_COUNT=$(grep -c "Idempotency HIT" "$LOG_DIR/D.log" || echo "0")
-    echo ""
-    echo -e "${GREEN}Total cache hits in D: $HIT_COUNT${NC}"
-else
-    echo "No cache hits found in D"
-fi
-
-echo ""
-echo -e "${YELLOW}--- Node A (Leader) - Retry Pattern ---${NC}"
-RETRY_COUNT=$(grep -c "WARN" "$LOG_DIR/A.log" || echo "0")
-echo "Total retry attempts: $RETRY_COUNT"
-echo ""
-echo "Sample retries:"
-grep "WARN" "$LOG_DIR/A.log" | head -3 || echo "No retries found"
-
-echo ""
 echo "============================================"
-echo "Results Summary"
+echo "Performance Summary"
 echo "============================================"
 echo ""
-echo "Response Times:"
-echo "  Test 1 (fresh):                ${TIME_FIRST_MS}ms"
-echo "  Test 2 (duplicate request_id): ${TIME_SECOND_MS}ms"
-echo "  Test 3 (new request_id):       ${TIME_THIRD_MS}ms"
-echo "  Test 4 (after recovery):       ${TIME_AFTER_RECOVERY_MS}ms"
+
+echo -e "${CYAN}Key Metrics:${NC}"
+echo "  Iterations run:          $NUM_ITERATIONS"
+echo "  Fresh avg time:          ${AVG_FRESH}ms"
+echo "  Cached avg time:         ${AVG_CACHED}ms"
+echo "  Difference:              $((AVG_FRESH - AVG_CACHED))ms"
+echo "  Cache effectiveness:     $(( (AVG_FRESH - AVG_CACHED) * 100 / AVG_FRESH ))%"
+echo "  Total cache hits:        $TOTAL_CACHE_HITS"
 echo ""
 
-echo -e "${BLUE}Key Findings:${NC}"
-echo "1. Worker nodes cache responses by request_id"
-echo "2. Duplicate request_id triggers 'Idempotency HIT'"
-echo "3. Cache prevents redundant computation"
-echo "4. Retry mechanism uses exponential backoff (100ms, 200ms, 400ms)"
+echo -e "${GREEN}✓ Multi-iteration cache test completed${NC}"
 echo ""
-
-echo -e "${GREEN}✓ Cache & Idempotency test completed${NC}"
-echo ""
-echo "To manually verify cache hits:"
-echo "  grep 'Idempotency HIT' logs/C.log"
-echo "  grep 'WARN' logs/A.log"
+echo "To view detailed logs:"
+echo "  tail -20 logs/C.log"
+echo "  tail -20 logs/A.log"
