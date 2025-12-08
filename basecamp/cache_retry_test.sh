@@ -30,6 +30,7 @@ echo "============================================"
 echo "Cache & Idempotency with Retry Test"
 echo "Multi-Iteration Mode: $NUM_ITERATIONS runs | payload_size=${PAYLOAD_SIZE} bytes"
 echo "============================================"
+echo "Testing with payload size: ${PAYLOAD_SIZE} bytes"
 echo ""
 echo "This test verifies that:"
 echo "1. Duplicate request_id hits the cache (idempotency)"
@@ -44,7 +45,7 @@ cleanup() {
     sleep 2
 }
 
-trap cleanup EXIT
+# trap cleanup EXIT
 
 wait_for_server() {
     local node=$1
@@ -213,7 +214,6 @@ echo ""
 
 TOTAL_CACHE_HITS=$(grep -c "Idempotency HIT" "$LOG_DIR/C.log" || echo "0")
 echo -e "${BLUE}Total Idempotency Hits in Node C: ${TOTAL_CACHE_HITS}${NC}"
-
 TOTAL_CACHE_HITS_D=$(grep -c "Idempotency HIT" "$LOG_DIR/D.log" || echo "0")
 echo -e "${BLUE}Total Idempotency Hits in Node D: ${TOTAL_CACHE_HITS_D}${NC}"
 
