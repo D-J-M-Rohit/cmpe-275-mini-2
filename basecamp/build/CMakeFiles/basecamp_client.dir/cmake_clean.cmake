@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/basecamp_client.dir/link.d"
   "CMakeFiles/basecamp_client.dir/cpp/client/main_client.cc.o"
   "CMakeFiles/basecamp_client.dir/cpp/client/main_client.cc.o.d"
   "CMakeFiles/basecamp_client.dir/cpp/common/topology_loader.cc.o"

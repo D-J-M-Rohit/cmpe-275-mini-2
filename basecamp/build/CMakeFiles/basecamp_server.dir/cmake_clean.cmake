@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/basecamp_server.dir/link.d"
   "CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o"
   "CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o.d"
   "CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o"

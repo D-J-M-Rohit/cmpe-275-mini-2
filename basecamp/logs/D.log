@@ -1,0 +1,8 @@
+Node D configuration:
+  Max Inflight: 32
+  Neighbors:
+    - B (127.0.0.1:50052)
+    - E (127.0.0.1:50055)
+Neighbors for D: B(127.0.0.1:50052) E(127.0.0.1:50055)
+Starting node D on 127.0.0.1:50054
+KVDataset initialized: keys [500, 749], count=250

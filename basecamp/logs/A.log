@@ -1,0 +1,6 @@
+Node A configuration:
+  Max Inflight: 64
+  Neighbors:
+    - B (127.0.0.1:50052)
+    - E (127.0.0.1:50055)
+Neighbors for A: B(127.0.0.1:50052) E(127.0.0.1:50055)

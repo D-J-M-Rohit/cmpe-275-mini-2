@@ -1,0 +1,7 @@
+Node C configuration:
+  Max Inflight: 32
+  Neighbors:
+    - B (127.0.0.1:50052)
+Neighbors for C: B(127.0.0.1:50052)
+Starting node C on 127.0.0.1:50053
+KVDataset initialized: keys [0, 499], count=500

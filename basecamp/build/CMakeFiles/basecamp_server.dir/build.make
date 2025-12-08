@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tkamran/Code/275/cmpe-275-mini-2/basecamp
+CMAKE_SOURCE_DIR = "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build
+CMAKE_BINARY_DIR = "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/basecamp_server.dir/depend.make
@@ -73,102 +73,102 @@ CMakeFiles/basecamp_server.dir/codegen:
 .PHONY : CMakeFiles/basecamp_server.dir/codegen
 
 CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o: CMakeFiles/basecamp_server.dir/flags.make
-CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc
+CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 3/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc
 CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o: CMakeFiles/basecamp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc"
 
 CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc > CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc" > CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.i
 
 CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc -o CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/server/main_server.cc" -o CMakeFiles/basecamp_server.dir/cpp/server/main_server.cc.s
 
 CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o: CMakeFiles/basecamp_server.dir/flags.make
-CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/handler.cc
+CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 3/cmpe-275-mini-2/basecamp/cpp/server/handler.cc
 CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o: CMakeFiles/basecamp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/handler.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/server/handler.cc"
 
 CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/handler.cc > CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/server/handler.cc" > CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.i
 
 CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/server/handler.cc -o CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/server/handler.cc" -o CMakeFiles/basecamp_server.dir/cpp/server/handler.cc.s
 
 CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o: CMakeFiles/basecamp_server.dir/flags.make
-CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc
+CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 3/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc
 CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o: CMakeFiles/basecamp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc"
 
 CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc > CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc" > CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.i
 
 CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc -o CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/topology_loader.cc" -o CMakeFiles/basecamp_server.dir/cpp/common/topology_loader.cc.s
 
 CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o: CMakeFiles/basecamp_server.dir/flags.make
-CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc
+CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 3/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc
 CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o: CMakeFiles/basecamp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc"
 
 CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc > CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc" > CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.i
 
 CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc -o CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/chunk_manager.cc" -o CMakeFiles/basecamp_server.dir/cpp/common/chunk_manager.cc.s
 
 CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o: CMakeFiles/basecamp_server.dir/flags.make
-CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc
+CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 3/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc
 CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o: CMakeFiles/basecamp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc"
 
 CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc > CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc" > CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.i
 
 CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc -o CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/admission_control.cc" -o CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.s
 
 CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o: CMakeFiles/basecamp_server.dir/flags.make
-CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc
+CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 3/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc
 CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o: CMakeFiles/basecamp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc"
 
 CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc > CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc" > CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.i
 
 CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc -o CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/common/cancellation.cc" -o CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.s
 
 CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o: CMakeFiles/basecamp_server.dir/flags.make
-CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o: /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc
+CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o: /Users/jay/Desktop/sjsu/sem\ 3/275/mini\ 3/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc
 CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o: CMakeFiles/basecamp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o -c /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o -MF CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o.d -o CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o -c "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc"
 
 CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc > CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc" > CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.i
 
 CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc -o CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/cpp/workload/kv_dataset.cc" -o CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.s
 
 # Object files for target basecamp_server
 basecamp_server_OBJECTS = \
@@ -191,65 +191,110 @@ basecamp_server: CMakeFiles/basecamp_server.dir/cpp/common/admission_control.cc.
 basecamp_server: CMakeFiles/basecamp_server.dir/cpp/common/cancellation.cc.o
 basecamp_server: CMakeFiles/basecamp_server.dir/cpp/workload/kv_dataset.cc.o
 basecamp_server: CMakeFiles/basecamp_server.dir/build.make
-basecamp_server: CMakeFiles/basecamp_server.dir/compiler_depend.ts
 basecamp_server: libproto_objs.a
-basecamp_server: /usr/lib/x86_64-linux-gnu/libgrpc++.so.1.51.1
-basecamp_server: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-basecamp_server: /usr/lib/x86_64-linux-gnu/libgrpc.so.29.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libz.so
-basecamp_server: /usr/lib/x86_64-linux-gnu/libcares.so.2.12.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libaddress_sorting.so.29.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libupb.so.29.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_raw_hash_set.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_hash.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_city.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_low_level_hash.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libgpr.so.29.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_bad_variant_access.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_status.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_strerror.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_distributions.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_seed_sequences.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_pool_urbg.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_cord.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_bad_optional_access.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_cord_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_exponential_biased.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_str_format_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_time.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_int128.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_base.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_log_severity.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_civil_time.so.20220623.0.0
-basecamp_server: /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20220623.0.0
-basecamp_server: /home/linuxbrew/.linuxbrew/lib/libssl.so
-basecamp_server: /home/linuxbrew/.linuxbrew/lib/libcrypto.so
+basecamp_server: /opt/homebrew/opt/grpc/lib/libgrpc++.1.76.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libgrpc.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_json_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_textformat_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_lex_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_reflection_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_mini_descriptor_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_wire_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libutf8_range_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_message_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_mini_table_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_hash_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_base_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libupb_mem_lib.51.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libre2.11.0.0.dylib
+basecamp_server: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd
+basecamp_server: /opt/homebrew/lib/libcares.2.19.4.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libgpr.51.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libssl.dylib
+basecamp_server: /opt/homebrew/lib/libcrypto.dylib
+basecamp_server: /opt/homebrew/opt/grpc/lib/libaddress_sorting.51.0.0.dylib
+basecamp_server: /opt/homebrew/opt/protobuf/lib/libprotobuf.33.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_check_op.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_statusor.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_die_if_null.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_conditions.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_message.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_nullguard.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_examine_stack.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_format.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_structured_proto.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_log_sink_set.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_sink.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_entry.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_proto.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_marshalling.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_reflection.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_config.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_program_name.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_private_handle_accessor.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_commandlineflag.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_flags_commandlineflag_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_initialize.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_globals.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_globals.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_vlog_config_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_internal_fnmatch.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_raw_hash_set.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_hashtablez_sampler.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_distributions.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_seed_sequences.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_internal_entropy_pool.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_internal_randen.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_internal_randen_hwaes.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_internal_randen_hwaes_impl.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_internal_randen_slow.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_internal_platform.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_internal_seed_material.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_random_seed_gen_exception.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_status.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_cord.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_cordz_info.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_cord_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_hash.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_city.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_cordz_functions.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_exponential_biased.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_cordz_handle.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_crc_cord_state.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_crc32c.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_crc_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_crc_cpu_detect.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_str_format_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_leak_check.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_strerror.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_synchronization.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_stacktrace.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_symbolize.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_debugging_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_demangle_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_demangle_rust.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_decode_rust_punycode.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_utf8_for_code_point.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_graphcycles_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_kernel_timeout_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_malloc_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_tracing_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_time.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_civil_time.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_time_zone.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libutf8_validity.33.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_strings.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_strings_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_string_view.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_int128.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_base.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_spinlock_wait.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_throw_delegate.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_raw_logging_internal.2508.0.0.dylib
+basecamp_server: /opt/homebrew/lib/libabsl_log_severity.2508.0.0.dylib
 basecamp_server: CMakeFiles/basecamp_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable basecamp_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable basecamp_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/basecamp_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -261,6 +306,6 @@ CMakeFiles/basecamp_server.dir/clean:
 .PHONY : CMakeFiles/basecamp_server.dir/clean
 
 CMakeFiles/basecamp_server.dir/depend:
-	cd /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tkamran/Code/275/cmpe-275-mini-2/basecamp /home/tkamran/Code/275/cmpe-275-mini-2/basecamp /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build /home/tkamran/Code/275/cmpe-275-mini-2/basecamp/build/CMakeFiles/basecamp_server.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp" "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp" "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build" "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build" "/Users/jay/Desktop/sjsu/sem 3/275/mini 3/cmpe-275-mini-2/basecamp/build/CMakeFiles/basecamp_server.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/basecamp_server.dir/depend
 
