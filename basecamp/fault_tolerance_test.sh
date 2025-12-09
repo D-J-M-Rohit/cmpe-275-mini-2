@@ -26,6 +26,22 @@ echo "============================================"
 echo "Testing with payload size: ${PAYLOAD_SIZE} bytes"
 echo ""
 
+# Cross-platform timeout function
+run_with_timeout() {
+    local duration=$1
+    shift
+    local command="$@"
+    
+    if command -v timeout >/dev/null 2>&1; then
+        timeout "$duration" $command
+    elif command -v gtimeout >/dev/null 2>&1; then
+        gtimeout "$duration" $command
+    else
+        # Perl fallback for macOS without coreutils
+        perl -e 'alarm shift; exec @ARGV' "$duration" $command
+    fi
+}
+
 # Cleanup function
 cleanup() {
     echo -e "${YELLOW}Cleaning up...${NC}"
@@ -90,7 +106,7 @@ sleep 2
 
 echo ""
 echo -e "${YELLOW}Step 1: Initial GREEN request (should succeed)${NC}"
-if timeout 10 ./build/basecamp_client --target=GREEN --payload_size=$PAYLOAD_SIZE > /tmp/test1.log 2>&1; then
+if run_with_timeout 10 ./build/basecamp_client --target=GREEN --payload_size=$PAYLOAD_SIZE > /tmp/test1.log 2>&1; then
     echo -e "${GREEN}✓ Initial request succeeded${NC}"
     grep "OK\|pairs_count" /tmp/test1.log || true
 else
@@ -107,7 +123,7 @@ sleep 2
 echo ""
 echo -e "${YELLOW}Step 3: Send GREEN request while B is down${NC}"
 echo "Expected: Retries with exponential backoff (100ms, 200ms, 400ms)"
-if timeout 20 ./build/basecamp_client --target=GREEN --payload_size=$PAYLOAD_SIZE > /tmp/test2.log 2>&1; then
+if run_with_timeout 20 ./build/basecamp_client --target=GREEN --payload_size=$PAYLOAD_SIZE > /tmp/test2.log 2>&1; then
     echo -e "${GREEN}✓ Request succeeded (unexpected - B might not be fully dead)${NC}"
 else
     EXIT_CODE=$?
@@ -134,7 +150,7 @@ sleep 2
 
 echo ""
 echo -e "${YELLOW}Step 6: Send GREEN request after B is back${NC}"
-if timeout 10 ./build/basecamp_client --target=GREEN --payload_size=$PAYLOAD_SIZE > /tmp/test3.log 2>&1; then
+if run_with_timeout 10 ./build/basecamp_client --target=GREEN --payload_size=$PAYLOAD_SIZE > /tmp/test3.log 2>&1; then
     echo -e "${GREEN}✓ Request succeeded after B restart${NC}"
     grep "OK\|pairs_count" /tmp/test3.log || true
 else
@@ -149,7 +165,7 @@ echo ""
 echo -e "${YELLOW}=== Test 2: PINK Team Leader (E) Failure ===${NC}"
 
 echo -e "${YELLOW}Step 1: Initial PINK request${NC}"
-if timeout 10 ./build/basecamp_client --target=PINK --payload_size=$PAYLOAD_SIZE > /tmp/test4.log 2>&1; then
+if run_with_timeout 10 ./build/basecamp_client --target=PINK --payload_size=$PAYLOAD_SIZE > /tmp/test4.log 2>&1; then
     echo -e "${GREEN}✓ Initial PINK request succeeded${NC}"
 else
     echo -e "${RED}✗ Initial PINK request failed${NC}"
@@ -163,7 +179,7 @@ sleep 2
 
 echo ""
 echo -e "${YELLOW}Step 3: Send PINK request while E is down${NC}"
-if timeout 20 ./build/basecamp_client --target=PINK --payload_size=$PAYLOAD_SIZE > /tmp/test5.log 2>&1; then
+if run_with_timeout 20 ./build/basecamp_client --target=PINK --payload_size=$PAYLOAD_SIZE > /tmp/test5.log 2>&1; then
     echo -e "${RED}✗ Request succeeded (unexpected)${NC}"
 else
     echo -e "${GREEN}✓ Request failed as expected (E is down)${NC}"
@@ -180,7 +196,7 @@ sleep 2
 
 echo ""
 echo -e "${YELLOW}Step 5: Send PINK request after E restart${NC}"
-if timeout 10 ./build/basecamp_client --target=PINK --payload_size=$PAYLOAD_SIZE > /tmp/test6.log 2>&1; then
+if run_with_timeout 10 ./build/basecamp_client --target=PINK --payload_size=$PAYLOAD_SIZE > /tmp/test6.log 2>&1; then
     echo -e "${GREEN}✓ Request succeeded after E restart${NC}"
 else
     echo -e "${RED}✗ Request failed${NC}"

@@ -5,3 +5,19 @@ Node C configuration:
 Neighbors for C: B(127.0.0.1:50052)
 Starting node C on 127.0.0.1:50053
 KVDataset initialized: keys [0, 499], count=500
+Server started. Ctrl-C to exit.
+[iter-1-fresh-1765238485281347000] C received (path=A,B,)
+[iter-1-fresh-1765238485281347000] C received (path=A,B,)
+C: Idempotency HIT for iter-1-fresh-1765238485281347000
+[iter-2-fresh-1765238487523236000] C received (path=A,B,)
+[iter-2-fresh-1765238487523236000] C received (path=A,B,)
+C: Idempotency HIT for iter-2-fresh-1765238487523236000
+[iter-3-fresh-1765238489758042000] C received (path=A,B,)
+[iter-3-fresh-1765238489758042000] C received (path=A,B,)
+C: Idempotency HIT for iter-3-fresh-1765238489758042000
+[iter-4-fresh-1765238491992177000] C received (path=A,B,)
+[iter-4-fresh-1765238491992177000] C received (path=A,B,)
+C: Idempotency HIT for iter-4-fresh-1765238491992177000
+[iter-5-fresh-1765238494233723000] C received (path=A,B,)
+[iter-5-fresh-1765238494233723000] C received (path=A,B,)
+C: Idempotency HIT for iter-5-fresh-1765238494233723000

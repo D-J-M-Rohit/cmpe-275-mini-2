@@ -26,6 +26,35 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
+# Cross-platform timeout function
+run_with_timeout() {
+    local duration=$1
+    shift
+    local command="$@"
+    
+    if command -v timeout >/dev/null 2>&1; then
+        timeout "$duration" $command
+    elif command -v gtimeout >/dev/null 2>&1; then
+        gtimeout "$duration" $command
+    else
+        # Perl fallback for macOS without coreutils
+        perl -e 'alarm shift; exec @ARGV' "$duration" $command
+    fi
+}
+
+
+# Cross-platform timestamp function (nanoseconds)
+get_timestamp() {
+    if date +%s%N | grep -q 'N'; then
+        # macOS/BSD date (does not support %N)
+        # Use python fallback
+        python3 -c 'import time; print(int(time.time() * 1000000000))'
+    else
+        # GNU date
+        date +%s%N
+    fi
+}
+
 echo "============================================"
 echo "Cache & Idempotency with Retry Test"
 echo "Multi-Iteration Mode: $NUM_ITERATIONS runs | payload_size=${PAYLOAD_SIZE} bytes"
@@ -123,13 +152,13 @@ for i in $(seq 1 $NUM_ITERATIONS); do
     
     # Generate unique request IDs for this iteration
     ITER_BASE_ID="iter-$i-"
-    FRESH_REQ_ID="${ITER_BASE_ID}fresh-$(date +%s%N)"
+    FRESH_REQ_ID="${ITER_BASE_ID}fresh-$(get_timestamp)"
     
     # Test 1: Fresh request
     echo -e "${YELLOW}Fresh request (new ID):${NC}"
-    TIMESTAMP_START=$(date +%s%N)
-    timeout 10 ./build/basecamp_client --target=GREEN --payload_size="$PAYLOAD_SIZE" --request_id="$FRESH_REQ_ID" > /tmp/cache_test_iter_${i}_fresh.log 2>&1
-    TIMESTAMP_END=$(date +%s%N)
+    TIMESTAMP_START=$(get_timestamp)
+    run_with_timeout 10 ./build/basecamp_client --target=GREEN --payload_size="$PAYLOAD_SIZE" --request_id="$FRESH_REQ_ID" > /tmp/cache_test_iter_${i}_fresh.log 2>&1
+    TIMESTAMP_END=$(get_timestamp)
     TIME_FRESH=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
     
     grep "OK" /tmp/cache_test_iter_${i}_fresh.log || true
@@ -140,9 +169,9 @@ for i in $(seq 1 $NUM_ITERATIONS); do
     
     # Test 2: Cached request (same ID)
     echo -e "${YELLOW}Cached request (duplicate ID):${NC}"
-    TIMESTAMP_START=$(date +%s%N)
-    timeout 10 ./build/basecamp_client --target=GREEN --payload_size="$PAYLOAD_SIZE" --request_id="$FRESH_REQ_ID" > /tmp/cache_test_iter_${i}_cached.log 2>&1
-    TIMESTAMP_END=$(date +%s%N)
+    TIMESTAMP_START=$(get_timestamp)
+    run_with_timeout 10 ./build/basecamp_client --target=GREEN --payload_size="$PAYLOAD_SIZE" --request_id="$FRESH_REQ_ID" > /tmp/cache_test_iter_${i}_cached.log 2>&1
+    TIMESTAMP_END=$(get_timestamp)
     TIME_CACHED=$(( (TIMESTAMP_END - TIMESTAMP_START) / 1000000 ))
     
     grep "OK" /tmp/cache_test_iter_${i}_cached.log || true
