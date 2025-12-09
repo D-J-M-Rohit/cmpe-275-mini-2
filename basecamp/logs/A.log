@@ -4,3 +4,32 @@ Node A configuration:
     - B (127.0.0.1:50052)
     - E (127.0.0.1:50055)
 Neighbors for A: B(127.0.0.1:50052) E(127.0.0.1:50055)
+Node A configuration:
+  Max Inflight: 64
+  Neighbors:
+    - B (127.0.0.1:50052)
+    - E (127.0.0.1:50055)
+Neighbors for A: B(127.0.0.1:50052) E(127.0.0.1:50055)
+Starting node A on 127.0.0.1:50051
+Server started. Ctrl-C to exit.
+[req-6745917717828905626] A received (path=)
+[req-6745917717828905626] A -> B (size=512)
+[req-6712657794795695006] A received (path=)
+[req-6712657794795695006] A -> B (size=512)
+[req-2976964686239180257] A received (path=)
+[req-2976964686239180257] A -> B (size=512)
+[req-14018004732804186661] A received (path=)
+[req-14018004732804186661] A -> E (size=512)
+RPC to neighbor E failed: code=2 msg="Exception calling application: unsupported operand type(s) for +: 'int' and 'str'"
+[req-17646309404555689848] A received (path=)
+[req-17646309404555689848] A -> E (size=512)
+RPC to neighbor E failed: code=2 msg="Exception calling application: unsupported operand type(s) for +: 'int' and 'str'"
+[req-10434861283071244879] A received (path=)
+[req-10434861283071244879] A -> E (size=512)
+RPC to neighbor E failed: code=2 msg="Exception calling application: unsupported operand type(s) for +: 'int' and 'str'"
+Node A configuration:
+  Max Inflight: 64
+  Neighbors:
+    - B (127.0.0.1:50052)
+    - E (127.0.0.1:50055)
+Neighbors for A: B(127.0.0.1:50052) E(127.0.0.1:50055)

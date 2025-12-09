@@ -5,3 +5,31 @@ Node B configuration:
     - C (127.0.0.1:50053)
     - D (127.0.0.1:50054)
 Neighbors for B: A(127.0.0.1:50051) C(127.0.0.1:50053) D(127.0.0.1:50054)
+Node B configuration:
+  Max Inflight: 32
+  Neighbors:
+    - A (127.0.0.1:50051)
+    - C (127.0.0.1:50053)
+    - D (127.0.0.1:50054)
+Neighbors for B: A(127.0.0.1:50051) C(127.0.0.1:50053) D(127.0.0.1:50054)
+Node B configuration:
+  Max Inflight: 32
+  Neighbors:
+    - A (127.0.0.1:50051)
+    - C (127.0.0.1:50053)
+    - D (127.0.0.1:50054)
+Neighbors for B: A(127.0.0.1:50051) C(127.0.0.1:50053) D(127.0.0.1:50054)
+Node B configuration:
+  Max Inflight: 32
+  Neighbors:
+    - A (127.0.0.1:50051)
+    - C (127.0.0.1:50053)
+    - D (127.0.0.1:50054)
+Neighbors for B: A(127.0.0.1:50051) C(127.0.0.1:50053) D(127.0.0.1:50054)
+Node B configuration:
+  Max Inflight: 32
+  Neighbors:
+    - A (127.0.0.1:50051)
+    - C (127.0.0.1:50053)
+    - D (127.0.0.1:50054)
+Neighbors for B: A(127.0.0.1:50051) C(127.0.0.1:50053) D(127.0.0.1:50054)

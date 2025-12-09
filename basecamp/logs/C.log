@@ -21,3 +21,17 @@ C: Idempotency HIT for iter-4-fresh-1765238491992177000
 [iter-5-fresh-1765238494233723000] C received (path=A,B,)
 [iter-5-fresh-1765238494233723000] C received (path=A,B,)
 C: Idempotency HIT for iter-5-fresh-1765238494233723000
+Node C configuration:
+  Max Inflight: 32
+  Neighbors:
+    - B (127.0.0.1:50052)
+Neighbors for C: B(127.0.0.1:50052)
+Starting node C on 127.0.0.1:50053
+KVDataset initialized: keys [0, 499], count=500
+Node C configuration:
+  Max Inflight: 32
+  Neighbors:
+    - B (127.0.0.1:50052)
+Neighbors for C: B(127.0.0.1:50052)
+Starting node C on 127.0.0.1:50053
+KVDataset initialized: keys [0, 499], count=500
