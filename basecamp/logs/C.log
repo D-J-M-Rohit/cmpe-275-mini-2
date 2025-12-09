@@ -6,32 +6,247 @@ Neighbors for C: B(127.0.0.1:50052)
 Starting node C on 127.0.0.1:50053
 KVDataset initialized: keys [0, 499], count=500
 Server started. Ctrl-C to exit.
-[iter-1-fresh-1765238485281347000] C received (path=A,B,)
-[iter-1-fresh-1765238485281347000] C received (path=A,B,)
-C: Idempotency HIT for iter-1-fresh-1765238485281347000
-[iter-2-fresh-1765238487523236000] C received (path=A,B,)
-[iter-2-fresh-1765238487523236000] C received (path=A,B,)
-C: Idempotency HIT for iter-2-fresh-1765238487523236000
-[iter-3-fresh-1765238489758042000] C received (path=A,B,)
-[iter-3-fresh-1765238489758042000] C received (path=A,B,)
-C: Idempotency HIT for iter-3-fresh-1765238489758042000
-[iter-4-fresh-1765238491992177000] C received (path=A,B,)
-[iter-4-fresh-1765238491992177000] C received (path=A,B,)
-C: Idempotency HIT for iter-4-fresh-1765238491992177000
-[iter-5-fresh-1765238494233723000] C received (path=A,B,)
-[iter-5-fresh-1765238494233723000] C received (path=A,B,)
-C: Idempotency HIT for iter-5-fresh-1765238494233723000
-Node C configuration:
-  Max Inflight: 32
-  Neighbors:
-    - B (127.0.0.1:50052)
-Neighbors for C: B(127.0.0.1:50052)
-Starting node C on 127.0.0.1:50053
-KVDataset initialized: keys [0, 499], count=500
-Node C configuration:
-  Max Inflight: 32
-  Neighbors:
-    - B (127.0.0.1:50052)
-Neighbors for C: B(127.0.0.1:50052)
-Starting node C on 127.0.0.1:50053
-KVDataset initialized: keys [0, 499], count=500
+[iter-1-fresh-1765243971459023000] C received (path=A,B,)
+[iter-1-fresh-1765243971459023000] C received (path=A,B,)
+C: Idempotency HIT for iter-1-fresh-1765243971459023000
+[iter-1-fresh-1765243971459023000] C received (path=A,B,)
+C: Idempotency HIT for iter-1-fresh-1765243971459023000
+[iter-2-fresh-1765243977790963000] C received (path=A,B,)
+[iter-2-fresh-1765243977790963000] C received (path=A,B,)
+C: Idempotency HIT for iter-2-fresh-1765243977790963000
+[iter-2-fresh-1765243977790963000] C received (path=A,B,)
+C: Idempotency HIT for iter-2-fresh-1765243977790963000
+[iter-3-fresh-1765243984113564000] C received (path=A,B,)
+[iter-3-fresh-1765243984113564000] C received (path=A,B,)
+C: Idempotency HIT for iter-3-fresh-1765243984113564000
+[iter-3-fresh-1765243984113564000] C received (path=A,B,)
+C: Idempotency HIT for iter-3-fresh-1765243984113564000
+[iter-4-fresh-1765243990453845000] C received (path=A,B,)
+[iter-4-fresh-1765243990453845000] C received (path=A,B,)
+C: Idempotency HIT for iter-4-fresh-1765243990453845000
+[iter-4-fresh-1765243990453845000] C received (path=A,B,)
+C: Idempotency HIT for iter-4-fresh-1765243990453845000
+[iter-5-fresh-1765243996789417000] C received (path=A,B,)
+[iter-5-fresh-1765243996789417000] C received (path=A,B,)
+C: Idempotency HIT for iter-5-fresh-1765243996789417000
+[iter-5-fresh-1765243996789417000] C received (path=A,B,)
+C: Idempotency HIT for iter-5-fresh-1765243996789417000
+[iter-6-fresh-1765244003122954000] C received (path=A,B,)
+[iter-6-fresh-1765244003122954000] C received (path=A,B,)
+C: Idempotency HIT for iter-6-fresh-1765244003122954000
+[iter-6-fresh-1765244003122954000] C received (path=A,B,)
+C: Idempotency HIT for iter-6-fresh-1765244003122954000
+[iter-7-fresh-1765244009442693000] C received (path=A,B,)
+[iter-7-fresh-1765244009442693000] C received (path=A,B,)
+C: Idempotency HIT for iter-7-fresh-1765244009442693000
+[iter-7-fresh-1765244009442693000] C received (path=A,B,)
+C: Idempotency HIT for iter-7-fresh-1765244009442693000
+[iter-8-fresh-1765244015770364000] C received (path=A,B,)
+[iter-8-fresh-1765244015770364000] C received (path=A,B,)
+C: Idempotency HIT for iter-8-fresh-1765244015770364000
+[iter-8-fresh-1765244015770364000] C received (path=A,B,)
+C: Idempotency HIT for iter-8-fresh-1765244015770364000
+[iter-9-fresh-1765244022099717000] C received (path=A,B,)
+[iter-9-fresh-1765244022099717000] C received (path=A,B,)
+C: Idempotency HIT for iter-9-fresh-1765244022099717000
+[iter-9-fresh-1765244022099717000] C received (path=A,B,)
+C: Idempotency HIT for iter-9-fresh-1765244022099717000
+[iter-10-fresh-1765244028425604000] C received (path=A,B,)
+[iter-10-fresh-1765244028425604000] C received (path=A,B,)
+C: Idempotency HIT for iter-10-fresh-1765244028425604000
+[iter-10-fresh-1765244028425604000] C received (path=A,B,)
+C: Idempotency HIT for iter-10-fresh-1765244028425604000
+[iter-11-fresh-1765244034703081000] C received (path=A,B,)
+[iter-11-fresh-1765244034703081000] C received (path=A,B,)
+C: Idempotency HIT for iter-11-fresh-1765244034703081000
+[iter-11-fresh-1765244034703081000] C received (path=A,B,)
+C: Idempotency HIT for iter-11-fresh-1765244034703081000
+[iter-12-fresh-1765244041038497000] C received (path=A,B,)
+[iter-12-fresh-1765244041038497000] C received (path=A,B,)
+C: Idempotency HIT for iter-12-fresh-1765244041038497000
+[iter-12-fresh-1765244041038497000] C received (path=A,B,)
+C: Idempotency HIT for iter-12-fresh-1765244041038497000
+[iter-13-fresh-1765244047368803000] C received (path=A,B,)
+[iter-13-fresh-1765244047368803000] C received (path=A,B,)
+C: Idempotency HIT for iter-13-fresh-1765244047368803000
+[iter-13-fresh-1765244047368803000] C received (path=A,B,)
+C: Idempotency HIT for iter-13-fresh-1765244047368803000
+[iter-14-fresh-1765244053696520000] C received (path=A,B,)
+[iter-14-fresh-1765244053696520000] C received (path=A,B,)
+C: Idempotency HIT for iter-14-fresh-1765244053696520000
+[iter-14-fresh-1765244053696520000] C received (path=A,B,)
+C: Idempotency HIT for iter-14-fresh-1765244053696520000
+[iter-15-fresh-1765244060044422000] C received (path=A,B,)
+[iter-15-fresh-1765244060044422000] C received (path=A,B,)
+C: Idempotency HIT for iter-15-fresh-1765244060044422000
+[iter-15-fresh-1765244060044422000] C received (path=A,B,)
+C: Idempotency HIT for iter-15-fresh-1765244060044422000
+[iter-16-fresh-1765244066371070000] C received (path=A,B,)
+[iter-16-fresh-1765244066371070000] C received (path=A,B,)
+C: Idempotency HIT for iter-16-fresh-1765244066371070000
+[iter-16-fresh-1765244066371070000] C received (path=A,B,)
+C: Idempotency HIT for iter-16-fresh-1765244066371070000
+[iter-17-fresh-1765244072692288000] C received (path=A,B,)
+[iter-17-fresh-1765244072692288000] C received (path=A,B,)
+C: Idempotency HIT for iter-17-fresh-1765244072692288000
+[iter-17-fresh-1765244072692288000] C received (path=A,B,)
+C: Idempotency HIT for iter-17-fresh-1765244072692288000
+[iter-18-fresh-1765244079027758000] C received (path=A,B,)
+[iter-18-fresh-1765244079027758000] C received (path=A,B,)
+C: Idempotency HIT for iter-18-fresh-1765244079027758000
+[iter-18-fresh-1765244079027758000] C received (path=A,B,)
+C: Idempotency HIT for iter-18-fresh-1765244079027758000
+[iter-19-fresh-1765244085352838000] C received (path=A,B,)
+[iter-19-fresh-1765244085352838000] C received (path=A,B,)
+C: Idempotency HIT for iter-19-fresh-1765244085352838000
+[iter-19-fresh-1765244085352838000] C received (path=A,B,)
+C: Idempotency HIT for iter-19-fresh-1765244085352838000
+[iter-20-fresh-1765244091668766000] C received (path=A,B,)
+[iter-20-fresh-1765244091668766000] C received (path=A,B,)
+C: Idempotency HIT for iter-20-fresh-1765244091668766000
+[iter-20-fresh-1765244091668766000] C received (path=A,B,)
+C: Idempotency HIT for iter-20-fresh-1765244091668766000
+[iter-21-fresh-1765244098001294000] C received (path=A,B,)
+[iter-21-fresh-1765244098001294000] C received (path=A,B,)
+C: Idempotency HIT for iter-21-fresh-1765244098001294000
+[iter-22-fresh-1765244103215705000] C received (path=A,B,)
+[iter-22-fresh-1765244103215705000] C received (path=A,B,)
+C: Idempotency HIT for iter-22-fresh-1765244103215705000
+[iter-22-fresh-1765244103215705000] C received (path=A,B,)
+C: Idempotency HIT for iter-22-fresh-1765244103215705000
+[iter-23-fresh-1765244109520188000] C received (path=A,B,)
+[iter-23-fresh-1765244109520188000] C received (path=A,B,)
+C: Idempotency HIT for iter-23-fresh-1765244109520188000
+[iter-23-fresh-1765244109520188000] C received (path=A,B,)
+C: Idempotency HIT for iter-23-fresh-1765244109520188000
+[iter-24-fresh-1765244115865710000] C received (path=A,B,)
+[iter-24-fresh-1765244115865710000] C received (path=A,B,)
+C: Idempotency HIT for iter-24-fresh-1765244115865710000
+[iter-25-fresh-1765244121069953000] C received (path=A,B,)
+[iter-25-fresh-1765244121069953000] C received (path=A,B,)
+C: Idempotency HIT for iter-25-fresh-1765244121069953000
+[iter-26-fresh-1765244126289399000] C received (path=A,B,)
+[iter-26-fresh-1765244126289399000] C received (path=A,B,)
+C: Idempotency HIT for iter-26-fresh-1765244126289399000
+[iter-26-fresh-1765244126289399000] C received (path=A,B,)
+C: Idempotency HIT for iter-26-fresh-1765244126289399000
+[iter-27-fresh-1765244132629156000] C received (path=A,B,)
+[iter-27-fresh-1765244132629156000] C received (path=A,B,)
+C: Idempotency HIT for iter-27-fresh-1765244132629156000
+[iter-27-fresh-1765244132629156000] C received (path=A,B,)
+C: Idempotency HIT for iter-27-fresh-1765244132629156000
+[iter-28-fresh-1765244138972480000] C received (path=A,B,)
+[iter-28-fresh-1765244138972480000] C received (path=A,B,)
+C: Idempotency HIT for iter-28-fresh-1765244138972480000
+[iter-28-fresh-1765244138972480000] C received (path=A,B,)
+C: Idempotency HIT for iter-28-fresh-1765244138972480000
+[iter-29-fresh-1765244145284953000] C received (path=A,B,)
+[iter-29-fresh-1765244145284953000] C received (path=A,B,)
+C: Idempotency HIT for iter-29-fresh-1765244145284953000
+[iter-29-fresh-1765244145284953000] C received (path=A,B,)
+C: Idempotency HIT for iter-29-fresh-1765244145284953000
+[iter-30-fresh-1765244151615130000] C received (path=A,B,)
+[iter-30-fresh-1765244151615130000] C received (path=A,B,)
+C: Idempotency HIT for iter-30-fresh-1765244151615130000
+[iter-30-fresh-1765244151615130000] C received (path=A,B,)
+C: Idempotency HIT for iter-30-fresh-1765244151615130000
+[iter-31-fresh-1765244157937771000] C received (path=A,B,)
+[iter-31-fresh-1765244157937771000] C received (path=A,B,)
+C: Idempotency HIT for iter-31-fresh-1765244157937771000
+[iter-31-fresh-1765244157937771000] C received (path=A,B,)
+C: Idempotency HIT for iter-31-fresh-1765244157937771000
+[iter-32-fresh-1765244164281859000] C received (path=A,B,)
+[iter-32-fresh-1765244164281859000] C received (path=A,B,)
+C: Idempotency HIT for iter-32-fresh-1765244164281859000
+[iter-32-fresh-1765244164281859000] C received (path=A,B,)
+C: Idempotency HIT for iter-32-fresh-1765244164281859000
+[iter-33-fresh-1765244170595670000] C received (path=A,B,)
+[iter-33-fresh-1765244170595670000] C received (path=A,B,)
+C: Idempotency HIT for iter-33-fresh-1765244170595670000
+[iter-33-fresh-1765244170595670000] C received (path=A,B,)
+C: Idempotency HIT for iter-33-fresh-1765244170595670000
+[iter-34-fresh-1765244176933774000] C received (path=A,B,)
+[iter-34-fresh-1765244176933774000] C received (path=A,B,)
+C: Idempotency HIT for iter-34-fresh-1765244176933774000
+[iter-34-fresh-1765244176933774000] C received (path=A,B,)
+C: Idempotency HIT for iter-34-fresh-1765244176933774000
+[iter-35-fresh-1765244183265835000] C received (path=A,B,)
+[iter-35-fresh-1765244183265835000] C received (path=A,B,)
+C: Idempotency HIT for iter-35-fresh-1765244183265835000
+[iter-35-fresh-1765244183265835000] C received (path=A,B,)
+C: Idempotency HIT for iter-35-fresh-1765244183265835000
+[iter-36-fresh-1765244189577373000] C received (path=A,B,)
+[iter-36-fresh-1765244189577373000] C received (path=A,B,)
+C: Idempotency HIT for iter-36-fresh-1765244189577373000
+[iter-36-fresh-1765244189577373000] C received (path=A,B,)
+C: Idempotency HIT for iter-36-fresh-1765244189577373000
+[iter-37-fresh-1765244195876371000] C received (path=A,B,)
+[iter-37-fresh-1765244195876371000] C received (path=A,B,)
+C: Idempotency HIT for iter-37-fresh-1765244195876371000
+[iter-37-fresh-1765244195876371000] C received (path=A,B,)
+C: Idempotency HIT for iter-37-fresh-1765244195876371000
+[iter-38-fresh-1765244202214325000] C received (path=A,B,)
+[iter-38-fresh-1765244202214325000] C received (path=A,B,)
+C: Idempotency HIT for iter-38-fresh-1765244202214325000
+[iter-38-fresh-1765244202214325000] C received (path=A,B,)
+C: Idempotency HIT for iter-38-fresh-1765244202214325000
+[iter-39-fresh-1765244208532986000] C received (path=A,B,)
+[iter-39-fresh-1765244208532986000] C received (path=A,B,)
+C: Idempotency HIT for iter-39-fresh-1765244208532986000
+[iter-39-fresh-1765244208532986000] C received (path=A,B,)
+C: Idempotency HIT for iter-39-fresh-1765244208532986000
+[iter-40-fresh-1765244214840209000] C received (path=A,B,)
+[iter-40-fresh-1765244214840209000] C received (path=A,B,)
+C: Idempotency HIT for iter-40-fresh-1765244214840209000
+[iter-40-fresh-1765244214840209000] C received (path=A,B,)
+C: Idempotency HIT for iter-40-fresh-1765244214840209000
+[iter-41-fresh-1765244221176387000] C received (path=A,B,)
+[iter-41-fresh-1765244221176387000] C received (path=A,B,)
+C: Idempotency HIT for iter-41-fresh-1765244221176387000
+[iter-41-fresh-1765244221176387000] C received (path=A,B,)
+C: Idempotency HIT for iter-41-fresh-1765244221176387000
+[iter-42-fresh-1765244227518561000] C received (path=A,B,)
+[iter-42-fresh-1765244227518561000] C received (path=A,B,)
+C: Idempotency HIT for iter-42-fresh-1765244227518561000
+[iter-42-fresh-1765244227518561000] C received (path=A,B,)
+C: Idempotency HIT for iter-42-fresh-1765244227518561000
+[iter-43-fresh-1765244233834691000] C received (path=A,B,)
+[iter-43-fresh-1765244233834691000] C received (path=A,B,)
+C: Idempotency HIT for iter-43-fresh-1765244233834691000
+[iter-43-fresh-1765244233834691000] C received (path=A,B,)
+C: Idempotency HIT for iter-43-fresh-1765244233834691000
+[iter-44-fresh-1765244240173464000] C received (path=A,B,)
+[iter-44-fresh-1765244240173464000] C received (path=A,B,)
+C: Idempotency HIT for iter-44-fresh-1765244240173464000
+[iter-44-fresh-1765244240173464000] C received (path=A,B,)
+C: Idempotency HIT for iter-44-fresh-1765244240173464000
+[iter-45-fresh-1765244246513510000] C received (path=A,B,)
+[iter-45-fresh-1765244246513510000] C received (path=A,B,)
+C: Idempotency HIT for iter-45-fresh-1765244246513510000
+[iter-45-fresh-1765244246513510000] C received (path=A,B,)
+C: Idempotency HIT for iter-45-fresh-1765244246513510000
+[iter-46-fresh-1765244252837223000] C received (path=A,B,)
+[iter-46-fresh-1765244252837223000] C received (path=A,B,)
+C: Idempotency HIT for iter-46-fresh-1765244252837223000
+[iter-46-fresh-1765244252837223000] C received (path=A,B,)
+C: Idempotency HIT for iter-46-fresh-1765244252837223000
+[iter-47-fresh-1765244259170862000] C received (path=A,B,)
+[iter-47-fresh-1765244259170862000] C received (path=A,B,)
+C: Idempotency HIT for iter-47-fresh-1765244259170862000
+[iter-47-fresh-1765244259170862000] C received (path=A,B,)
+C: Idempotency HIT for iter-47-fresh-1765244259170862000
+[iter-48-fresh-1765244265512396000] C received (path=A,B,)
+[iter-48-fresh-1765244265512396000] C received (path=A,B,)
+C: Idempotency HIT for iter-48-fresh-1765244265512396000
+[iter-48-fresh-1765244265512396000] C received (path=A,B,)
+C: Idempotency HIT for iter-48-fresh-1765244265512396000
+[iter-49-fresh-1765244271840700000] C received (path=A,B,)
+[iter-49-fresh-1765244271840700000] C received (path=A,B,)
+C: Idempotency HIT for iter-49-fresh-1765244271840700000
+[iter-49-fresh-1765244271840700000] C received (path=A,B,)
+C: Idempotency HIT for iter-49-fresh-1765244271840700000
+[iter-50-fresh-1765244278170661000] C received (path=A,B,)
+[iter-50-fresh-1765244278170661000] C received (path=A,B,)
+C: Idempotency HIT for iter-50-fresh-1765244278170661000
+[iter-50-fresh-1765244278170661000] C received (path=A,B,)
+C: Idempotency HIT for iter-50-fresh-1765244278170661000

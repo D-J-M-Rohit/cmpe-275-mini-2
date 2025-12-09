@@ -45,6 +45,9 @@ basecamp::Result Handler::DoLocalWork(const basecamp::Request &req) const {
   auto t0 = std::chrono::steady_clock::now();
 
   // Tiny deterministic CPU loop proportional to payload size
+  // SIMULATED HEAVY WORKLOAD: Sleep 1 second
+  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
   uint64_t acc = 0;
   for (const auto c : req.payload())
     acc = (acc * 1315423911u + static_cast<unsigned char>(c)) ^
